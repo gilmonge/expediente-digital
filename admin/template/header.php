@@ -26,32 +26,40 @@
                             <li class="nav-item nav-item-spaced dropdown dropdown-animate" data-toggle="hover"><a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Opciones</a>
                                 <div class="dropdown-menu dropdown-menu-md p-0">
                                     <div class="list-group list-group-flush px-lg-4">
-                                        <form action="../core/nologin-kernel.php" method="get">
-                                            <button type="submit" class="list-group-item list-group-item-action" role="button">
-                                                <div class="d-flex">
-                                                    <span class="h6">
-                                                        <i class="fas fa-door-open"></i>
-                                                    </span>
-                                                    <div class="ml-3">
-                                                        <h6 class="heading mb-0">Cerrar sesión</h6>
-                                                    </div>
+                                        <a type="submit" class="list-group-item list-group-item-action" role="button" href="colaboradores.php">
+                                            <div class="d-flex">
+                                                <span class="h6">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                </span>
+                                                <div class="ml-3">
+                                                    <h6 class="heading mb-0">Colaboradores</h6>
                                                 </div>
-                                            </button>
-                                        </form>
+                                            </div>
+                                        </a>
                                     </div>
                                     <div class="list-group list-group-flush px-lg-4">
-                                        <form action="../core/nologin-kernel.php" method="get">
-                                            <button type="submit" class="list-group-item list-group-item-action" role="button">
-                                                <div class="d-flex">
-                                                    <span class="h6">
-                                                        <i class="fas fa-door-open"></i>
-                                                    </span>
-                                                    <div class="ml-3">
-                                                        <h6 class="heading mb-0">Cerrar sesión</h6>
-                                                    </div>
+                                        <a type="submit" class="list-group-item list-group-item-action" role="button" href="#">
+                                            <div class="d-flex">
+                                                <span class="h6">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                </span>
+                                                <div class="ml-3">
+                                                    <h6 class="heading mb-0">Informes</h6>
                                                 </div>
-                                            </button>
-                                        </form>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="list-group list-group-flush px-lg-4">
+                                        <a type="submit" class="list-group-item list-group-item-action" role="button" href="mantenimientos.php">
+                                            <div class="d-flex">
+                                                <span class="h6">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                </span>
+                                                <div class="ml-3">
+                                                    <h6 class="heading mb-0">Mantenimientos</h6>
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
                             </li>

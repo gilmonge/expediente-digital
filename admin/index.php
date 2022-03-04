@@ -73,7 +73,7 @@
                                 <a href="#" class="d-block h5 mt-3">Mantenimientos</a>
                                 <div class="row align-items-center mt-4">
                                     <div class="col-12">
-                                        <a href="clientes.php" class="btn btn-sm btn-block btn-primary btn-primary-dashboard">Ir al módulo</a>
+                                        <a href="mantenimientos.php" class="btn btn-sm btn-block btn-primary btn-primary-dashboard">Ir al módulo</a>
                                     </div>
                                 </div>
                             </div>
