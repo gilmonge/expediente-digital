@@ -63,47 +63,14 @@
 		}
 		
 		public function es_logueado(){ /* analiza si esta logueado */
-			if(isset($_COOKIE['usuario'])){ $usuario=$_COOKIE['usuario']; }
-			else{ $usuario=''; }
-			
-			if(isset($_COOKIE['codigo'])){ $codigo=$_COOKIE['codigo']; } 
-			/* else if(isset($_SESSION['codigo'])){ $codigo=$_SESSION['codigo']; }  */
-			else{ $codigo=''; }
-			$ip= $this->get_ip_address();
-		
-			$par= $this->SQLDatos_CA("SELECT * FROM ".TABLA_USUARIOS_CONECTADOS." WHERE usuario=:usuario", array(':usuario'=>$usuario));
-			$par = $par->fetch();
-			
-			
-			if($par!=''){
-				$hora_acceso = date($par['hora_acceso']);
-				$ipBD = $par['ip'];
-				$codigoBD = $par['codigo'];
-				
-				if($codigoBD==$codigo){ /*($ipBD==$ip) && */
-					
-					if($par['abierto']==1){ return true; }
-					else{
-						$tiempo_permitido=$this->TraerParametro('login_time');
-						
-						$hora_actual = date('Y-m-d h:i:s');
-						$minutos = ceil((strtotime($hora_actual) - strtotime($hora_acceso)) / 60);
-						if ($tiempo_permitido>$minutos) { return true; }
-						else{ 
-							$this->SQLDatos_CA("DELETE FROM ".TABLA_USUARIOS_CONECTADOS." WHERE usuario=:usuario", array(':usuario'=>$usuario));
-							unset($_SESSION['usuario']);	unset($_COOKIE['usuario']);
-							unset($_SESSION['codigo']);		unset($_COOKIE['codigo']);
-						return false; }
-					}
-					
-				}
-				else {
-					unset($_SESSION['usuario']);	unset($_COOKIE['usuario']);
-					unset($_SESSION['codigo']);		unset($_COOKIE['codigo']);
-					return false; 
-				}
+			if(isset($_COOKIE['usuario'])){ $usuario=$_COOKIE['usuario']; } else{ $usuario=''; }
+			if(isset($_COOKIE['codigo'])){ $codigo=$_COOKIE['codigo']; } else{ $codigo=''; }
+
+			if($usuario != '' && $codigo != ''){
+				$_SESSION['usuario']=$usuario; $_SESSION['codigo']=$codigo; return true;
+			}else{
+				$_SESSION['usuario']=''; $_SESSION['codigo']=''; return false; 
 			}
-			else { $_SESSION['usuario']=''; $_SESSION['codigo']=''; return false; }
         }
 		
 		public function tiene_permiso(){ /* analiza si tiene acceso al archivo */

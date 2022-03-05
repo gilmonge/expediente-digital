@@ -12,7 +12,7 @@
         $Quick_function = new Quick_function;
     /** Inicializaciones */
     
-    /** Verifica si esta logueado * /
+    /** Verifica si esta logueado */
         $eslogueado=$Quick_function->es_logueado();
         if($eslogueado==true){ header('Location: admin/'); }
     /** Verifica si esta logueado */
