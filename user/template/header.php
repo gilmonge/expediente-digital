@@ -26,7 +26,7 @@
                             <li class="nav-item nav-item-spaced dropdown dropdown-animate" data-toggle="hover"><a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
                                 <div class="dropdown-menu dropdown-menu-md p-0">
                                     <div class="list-group list-group-flush px-lg-4">
-                                        <form action="../user/info.php" method="get">
+                                        <form action="../user/informacion.php" method="get">
                                             <button type="submit" class="list-group-item list-group-item-action" role="button">
                                                 <div class="d-flex">
                                                     <span class="h6">
@@ -40,7 +40,7 @@
                                         </form>
                                     </div>
                                     <div class="list-group list-group-flush px-lg-4">
-                                        <form action="../user/user-edit.php" method="get">
+                                        <form action="../user/usuario-edit.php" method="get">
                                             <button type="submit" class="list-group-item list-group-item-action" role="button">
                                                 <div class="d-flex">
                                                     <span class="h6">

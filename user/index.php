@@ -12,10 +12,10 @@
 		$Quick_function = new Quick_function;
     /** Inicializaciones */
     
-	/** Verifica si esta logueado * /
+	/*** Verifica si esta logueado * /
         $eslogueado=$Quick_function->es_logueado();
 		if($eslogueado!=true){ header('Location: ../'); }
-	/** Verifica si esta logueado */
+	/** Verifica si esta logueado ***/
     
 ?>
 <!DOCTYPE html>
@@ -48,7 +48,7 @@
                                 <a href="#" class="d-block h5 mt-3">Informaci&oacute;n</a>
                                 <div class="row align-items-center mt-4">
                                     <div class="col-12">
-                                        <a href="info.php" class="btn btn-sm btn-block btn-primary btn-primary-dashboard">Ver informaci&oacute;n</a>
+                                        <a href="informacion.php" class="btn btn-sm btn-block btn-primary btn-primary-dashboard">Ver informaci&oacute;n</a>
                                     </div>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
                                 <a href="#" class="d-block h5 mt-3">Editar Informaci&oacute;n</a>
                                 <div class="row align-items-center mt-4">
                                     <div class="col-12">
-                                        <a href="user-edit.php" class="btn btn-sm btn-block btn-primary btn-primary-dashboard">Actualizar Informaci&oacute;n</a>
+                                        <a href="usuario-edit.php" class="btn btn-sm btn-block btn-primary btn-primary-dashboard">Actualizar Informaci&oacute;n</a>
                                     </div>
                                 </div>
                             </div>
