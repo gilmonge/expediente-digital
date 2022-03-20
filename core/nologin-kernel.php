@@ -10,7 +10,7 @@
 	include_once('quick_function.php');
 	$Quick_function = new Quick_function;
 	
-	$uri=$Quick_function->TraerParametro("URI");
+	$uri="";
 	$url_sistema=$uri."admin/";
 	$url_login=$uri;
 	$url_register=$uri."register-creator.php";

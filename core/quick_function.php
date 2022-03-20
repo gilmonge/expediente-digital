@@ -33,6 +33,7 @@
 		public function TraerParametro($parametro){ /* Trae parametro */
 			$dbc = new ConexionDB();
 			$dbo=$dbc->conexion();
+			echo $parametro;
             $stmt = $dbo->prepare("SELECT valor FROM ".TABLA_PARAMETROS." WHERE identificador=:parametro");
             $stmt->execute(array(':parametro'=>$parametro));
 			$par = $stmt->fetch();
@@ -65,6 +66,8 @@
 		public function es_logueado(){ /* analiza si esta logueado */
 			if(isset($_COOKIE['usuario'])){ $usuario=$_COOKIE['usuario']; } else{ $usuario=''; }
 			if(isset($_COOKIE['codigo'])){ $codigo=$_COOKIE['codigo']; } else{ $codigo=''; }
+
+			return true;
 
 			if($usuario != '' && $codigo != ''){
 				$_SESSION['usuario']=$usuario; $_SESSION['codigo']=$codigo; return true;

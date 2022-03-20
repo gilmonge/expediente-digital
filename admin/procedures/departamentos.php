@@ -1,7 +1,7 @@
 <?php
     /**************************************************
-        Sistema de contabilidad
-        Desarrollador: Rexy Studios
+        Sistema de expediente digital
+        Desarrollador: Equipo UAM
         Año de creación: 2020
         Última modificación del archivo: 21-04-2020
     **************************************************/
