@@ -96,19 +96,6 @@
                     <div class="col-lg-4 px-2">
                         <div class="card">
                             <div class="card-body">
-                                <a href="#" class="d-block h5 mt-3">Uniformes</a>
-                                <div class="row align-items-center mt-4">
-                                    <div class="col-12">
-                                        <a href="uniformes.php" class="btn btn-sm btn-block btn-primary btn-primary-dashboard">Ir al módulo</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 px-2">
-                        <div class="card">
-                            <div class="card-body">
                                 <a href="#" class="d-block h5 mt-3">Tallas</a>
                                 <div class="row align-items-center mt-4">
                                     <div class="col-12">
