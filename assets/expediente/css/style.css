@@ -365,3 +365,9 @@ div.form-group.fv-plugins-icon-container.has-danger > .fv-plugins-message-contai
     background-color: #ffffff;
     color: #A3121A;
 }
+
+.dropdown-item.active, .dropdown-item:active {
+    text-decoration: none;
+    background: #A3121A;
+    color: #ffffff;
+}
