@@ -58,6 +58,7 @@
                                     <th scope="col" class="text-center">Horario apertura</th>
                                     <th scope="col" class="text-center">Horario cierre</th>
                                     <th scope="col" class="text-center">Días atención</th>
+                                    <th scope="col" class="text-center">Activo</th>
                                     <th scope="col" class="text-center">Editar</th>
                                     <th scope="col" class="text-center">Eliminar</th>
                                 </tr>
@@ -73,9 +74,10 @@
                                         $correo              = $row["correo"];
                                         $telefono            = $row["telefono"];
                                         $telefono2           = $row["telefono2"];
-                                        $horario_apertura    = $row["horario_apertura"];
-                                        $horario_cierre      = $row["horario_cierre"];
+                                        $horario_apertura    = date("h:m", strtotime($row["horario_apertura"]));
+                                        $horario_cierre      = date("h:m", strtotime($row["horario_cierre"]));
                                         $dias_atencion       = $row["dias_atencion"];
+                                        $activo              = ($row["activo"])? "Activo" : "Bloqueado";
 
                                         $informacion = htmlentities(json_encode($row));
 
@@ -88,9 +90,9 @@
                                         ';
 
                                         $botonEliminar = '
-                                            <button type="button" class="btn btn-danger btn-icon-only btn-sm" data-toggle="tooltip" data-placement="bottom" title="Eliminar" onclick="eliminar(\''.$informacion.'\')">
+                                            <button type="button" class="btn btn-danger btn-icon-only btn-sm" data-toggle="tooltip" data-placement="bottom" title="Bloquear" onclick="eliminar(\''.$informacion.'\')">
                                                 <span class="btn-inner--icon">
-                                                    <i class="far fa-trash-alt"></i>
+                                                    <i class="fas fa-ban"></i>
                                                 </span>
                                             </button>
                                         ';
@@ -106,6 +108,7 @@
                                                 <td class='text-center'>$horario_apertura</td>
                                                 <td class='text-center'>$horario_cierre</td>
                                                 <td class='text-center'>$dias_atencion</td>
+                                                <td class='text-center'>$activo</td>
                                                 <td class='text-center'>$botonEditar</td>
                                                 <td class='text-center'>$botonEliminar</td>
                                             </tr>
@@ -221,7 +224,7 @@
                         </div>
                     </div>
                     <input type="hidden" id="formaction_sucursal" name="formaction" value="create_DB">
-                    <input type="hidden" id="id_edit" name="id_sucursal" value="">
+                    <input type="hidden" id="id_sucursal" name="id_sucursal" value="">
                 </div>
             </form>
         </div>
@@ -234,7 +237,7 @@
             function establecer_agregar() {
                 $("#form_sucursal")      .trigger("reset")
                 $("#formaction_sucursal").val("create_DB")
-                $("#id_edit")                .val("")
+                $("#id_sucursal")                .val("")
                 $("#texto_Modal_metodo")     .html("Nuevo sucursal")
             }
 
@@ -244,22 +247,22 @@
                 $("#formaction_sucursal").val("edit_DB")
 
                 $("#texto_Modal_metodo").html(`Modificar sucursal`)
-                $("#id_edit")           .val(informacion.id)
+                $("#id_sucursal")           .val(informacion.id)
 
                 $("#nombre_sucursal").val(informacion.nombre)
             }
 
             function eliminar(informacion) {
                 informacion = JSON.parse(informacion)
-                $("#formaction_sucursal_accion").val('deleted_DB')
+                $("#formaction_sucursal_accion").val('block_DB')
                 $("#id_sucursal_accion").val(informacion.id)
 
                 mensaje = `
-                    Desea borrar '<b>${informacion.nombre}</b>'
+                    Desea bloquear '<b>${informacion.nombre}</b>'
                 `;
 
                 texto = `
-                    Borrar
+                    Bloquear
                 `;
                 
                 $("#texto_accion").html(texto)

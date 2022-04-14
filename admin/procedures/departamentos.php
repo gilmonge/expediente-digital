@@ -36,6 +36,9 @@
             case "deleted_DB":
                 borrarDB($url_principal, $Quick_function, $_POST);
             break;
+            case "block_DB":
+                bloquearDB($url_principal, $Quick_function, $_POST);
+            break;
             default:
                 header('Location: '.$uri);
             break;
@@ -101,6 +104,26 @@
         /* Declara el SQL */
             $TABLA = TBL_DEPARTAMENTO;
             $sql="DELETE FROM $TABLA WHERE id = :id";
+            echo $sql;
+        /* Declara el SQL */
+        
+        /* Ejecuta el query */
+            $Quick_function->SQLDatos_CA($sql, $datos);
+        /* Ejecuta el query */
+
+        /* Redirecciona */
+            header('Location: '.$url_list);
+        /* Redirecciona */
+    }
+
+    function bloquearDB($url_list, $Quick_function, $Data){
+        /* Inicia los datos de la DB */
+            $datos  = array(':id' => (isset($Data['id_departamento'])) ? strip_tags(trim($Data["id_departamento"])) : 0,);
+        /* Inicia los datos de la DB */
+
+        /* Declara el SQL */
+            $TABLA = TBL_DEPARTAMENTO;
+            $sql="UPDATE $TABLA SET activo = !activo WHERE id = :id";
             echo $sql;
         /* Declara el SQL */
         

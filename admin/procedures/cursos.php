@@ -37,6 +37,9 @@
             case "deleted_DB":
                 borrarDB($url_principal, $Quick_function, $_POST);
             break;
+            case "block_DB":
+                bloquearDB($url_principal, $Quick_function, $_POST);
+            break;
             default:
                 header('Location: '.$uri);
             break;
@@ -73,7 +76,7 @@
     function editarDB($url_list, $Quick_function, $Data){
         /* Inicia los datos de la DB */
             $datos  = array(
-                ':id'     => (isset($Data['id_departamento']))? strip_tags(trim($Data["id_departamento"])) : 0,
+                ':id'     => (isset($Data['id_cursos']))? strip_tags(trim($Data["id_cursos"])) : 0,
                 ':nombre' => (isset($Data['nombre']))? strip_tags(trim($Data["nombre"])) : "",
                 ':tiempo_capacitacion' => (isset($Data['tiempo_capacitacion']))  ? strip_tags(trim($Data["tiempo_capacitacion"])) : "",
             );
@@ -100,12 +103,32 @@
 
     function borrarDB($url_list, $Quick_function, $Data){
         /* Inicia los datos de la DB */
-            $datos  = array(':id' => (isset($Data['id_departamento'])) ? strip_tags(trim($Data["id_departamento"])) : 0,);
+            $datos  = array(':id' => (isset($Data['id_cursos'])) ? strip_tags(trim($Data["id_cursos"])) : 0,);
         /* Inicia los datos de la DB */
 
         /* Declara el SQL */
             $TABLA = TBL_CURSOS;
             $sql="DELETE FROM $TABLA WHERE id = :id";
+            echo $sql;
+        /* Declara el SQL */
+        
+        /* Ejecuta el query */
+            $Quick_function->SQLDatos_CA($sql, $datos);
+        /* Ejecuta el query */
+
+        /* Redirecciona */
+            header('Location: '.$url_list);
+        /* Redirecciona */
+    }
+
+    function bloquearDB($url_list, $Quick_function, $Data){
+        /* Inicia los datos de la DB */
+            $datos  = array(':id' => (isset($Data['id_cursos'])) ? strip_tags(trim($Data["id_cursos"])) : 0,);
+        /* Inicia los datos de la DB */
+
+        /* Declara el SQL */
+            $TABLA = TBL_CURSOS;
+            $sql="UPDATE $TABLA SET activo = !activo WHERE id = :id";
             echo $sql;
         /* Declara el SQL */
         

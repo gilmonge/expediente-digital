@@ -105,9 +105,9 @@
                                         </a>
                                     </td>
                                     <td class="text-center">
-                                        <button type="button" class="btn btn-danger btn-icon-only btn-sm" data-toggle="tooltip" data-placement="bottom" title="Eliminar" onclick="eliminar('0')">
+                                        <button type="button" class="btn btn-danger btn-icon-only btn-sm" data-toggle="tooltip" data-placement="bottom" title="Bloquear" onclick="eliminar('0')">
                                             <span class="btn-inner--icon">
-                                                <i class="far fa-trash-alt"></i>
+                                                <i class="fas fa-ban"></i>
                                             </span>
                                         </button>
                                     </td>
@@ -361,19 +361,19 @@
 
             function eliminar(informacion) {
                 informacion = JSON.parse(informacion)
-                $("#formaction_tercero_accion").val('deleted_DB')
+                $("#formaction_tercero_accion").val('block_DB')
                 $("#id_tercero_accion").val(informacion.id)
 
                 mensaje = (informacion.borrado == 1)? `
                     Desea recuperar el cliente ${informacion.nombre}
                 `: `
-                    Desea borrar el cliente ${informacion.nombre}
+                    Desea bloquear el cliente ${informacion.nombre}
                 `;
 
                 texto = (informacion.borrado == 1)? `
                     Recuperar cliente
                 `: `
-                    Borrar el cliente
+                    Bloquear el cliente
                 `;
                 
                 $("#texto_accion").html(texto)

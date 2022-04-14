@@ -53,6 +53,7 @@
                                     <th scope="col" class="text-center">Nombre</th>
                                     <th scope="col" class="text-center">Salario base</th>
                                     <th scope="col" class="text-center">Departamento</th>
+                                    <th scope="col" class="text-center">Activo</th>
                                     <th scope="col" class="text-center">Editar</th>
                                     <th scope="col" class="text-center">Eliminar</th>
                                 </tr>
@@ -76,6 +77,7 @@
                                         $nombre = $row["nombre"];
                                         $salario_base = $row["salario_base"];
                                         $departamento = $row["departamento"];
+                                        $activo = ($row["activo"])? "Activo" : "Bloqueado";
 
                                         $informacion = htmlentities(json_encode($row));
 
@@ -88,9 +90,9 @@
                                         ';
 
                                         $botonEliminar = '
-                                            <button type="button" class="btn btn-danger btn-icon-only btn-sm" data-toggle="tooltip" data-placement="bottom" title="Eliminar" onclick="eliminar(\''.$informacion.'\')">
+                                            <button type="button" class="btn btn-danger btn-icon-only btn-sm" data-toggle="tooltip" data-placement="bottom" title="Bloquear" onclick="eliminar(\''.$informacion.'\')">
                                                 <span class="btn-inner--icon">
-                                                    <i class="far fa-trash-alt"></i>
+                                                    <i class="fas fa-ban"></i>
                                                 </span>
                                             </button>
                                         ';
@@ -101,6 +103,7 @@
                                                 <td class='text-center'>$nombre</td>
                                                 <td class='text-center'>$salario_base</td>
                                                 <td class='text-center'>$departamento</td>
+                                                <td class='text-center'>$activo</td>
                                                 <td class='text-center'>$botonEditar</td>
                                                 <td class='text-center'>$botonEliminar</td>
                                             </tr>
@@ -136,7 +139,7 @@
                         </div>
                     </div>
                     <input type="hidden" id="formaction_puestos_accion" name="formaction" value="">
-                    <input type="hidden" id="id_departamento_accion" name="id_departamento" value="">
+                    <input type="hidden" id="id_puestos_accion" name="id_puestos" value="">
                 </div>
             </form>
         </div>
@@ -198,7 +201,7 @@
                         </div>
                     </div>
                     <input type="hidden" id="formaction_puestos" name="formaction" value="create_DB">
-                    <input type="hidden" id="id_edit" name="id_puestos" value="">
+                    <input type="hidden" id="id_puestos" name="id_puestos" value="">
                 </div>
             </form>
         </div>
@@ -210,7 +213,7 @@
             function establecer_agregar() {
                 $("#form_departamento")      .trigger("reset")
                 $("#formaction_puestos").val("create_DB")
-                $("#id_edit")                .val("")
+                $("#id_puestos")                .val("")
                 $("#nombre")                 .val("")
                 $("#salario_base")           .val("")
                 $("#id_departamento")        .val("")
@@ -223,7 +226,7 @@
                 $("#formaction_puestos").val("edit_DB")
 
                 $("#texto_Modal_metodo").html(`Modificar talla de uniforme`)
-                $("#id_edit")           .val(informacion.id)
+                $("#id_puestos")           .val(informacion.id)
 
                 $("#nombre").val(informacion.nombre)
                 $("#salario_base").val(informacion.salario_base)
@@ -232,15 +235,15 @@
 
             function eliminar(informacion) {
                 informacion = JSON.parse(informacion)
-                $("#formaction_puestos_accion").val('deleted_DB')
-                $("#id_departamento_accion").val(informacion.id)
+                $("#formaction_puestos_accion").val('block_DB')
+                $("#id_puestos_accion").val(informacion.id)
 
                 mensaje = `
-                    Desea borrar '<b>${informacion.nombre}</b>'
+                    Desea bloquear '<b>${informacion.nombre}</b>'
                 `;
 
                 texto = `
-                    Borrar
+                    Bloquear
                 `;
 
                 $("#texto_accion").html(texto)

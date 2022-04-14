@@ -261,13 +261,13 @@
 
             function eliminar(informacion) {
                 informacion = JSON.parse(informacion)
-                $("#formaction_tercero_accion").val('deleted_DB')
+                $("#formaction_tercero_accion").val('block_DB')
                 $("#id_tercero_accion").val(informacion.id)
 
                 mensaje = (informacion.borrado == 1)? `
                     Desea recuperar el cliente ${informacion.nombre}
                 `: `
-                    Desea borrar el cliente ${informacion.nombre}
+                    Desea bloquear el cliente ${informacion.nombre}
                 `;
 
                 texto = (informacion.borrado == 1)? `

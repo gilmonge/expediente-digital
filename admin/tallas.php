@@ -52,6 +52,7 @@
                                     <th scope="col" class="text-center">Id</th>
                                     <th scope="col" class="text-center">Nombre</th>
                                     <th scope="col" class="text-center">Sexo</th>
+                                    <th scope="col" class="text-center">Activo</th>
                                     <th scope="col" class="text-center">Editar</th>
                                     <th scope="col" class="text-center">Eliminar</th>
                                 </tr>
@@ -64,6 +65,7 @@
                                                     TU.id,
                                                     TU.nombre,
                                                     TU.id_sexo,
+                                                    TU.activo,
                                                     S.descripcion
                                                 FROM $TBL_TALLAS_UNIFORMES AS TU
                                                 INNER JOIN $TBL_SEXO AS S
@@ -74,6 +76,7 @@
                                         $id = $row["id"];
                                         $nombre = $row["nombre"];
                                         $descripcion = $row["descripcion"];
+                                        $activo = ($row["activo"])? "Activo" : "Bloqueado";
 
                                         $informacion = htmlentities(json_encode($row));
 
@@ -86,9 +89,9 @@
                                         ';
 
                                         $botonEliminar = '
-                                            <button type="button" class="btn btn-danger btn-icon-only btn-sm" data-toggle="tooltip" data-placement="bottom" title="Eliminar" onclick="eliminar(\''.$informacion.'\')">
+                                            <button type="button" class="btn btn-danger btn-icon-only btn-sm" data-toggle="tooltip" data-placement="bottom" title="Bloquear" onclick="eliminar(\''.$informacion.'\')">
                                                 <span class="btn-inner--icon">
-                                                    <i class="far fa-trash-alt"></i>
+                                                    <i class="fas fa-ban"></i>
                                                 </span>
                                             </button>
                                         ';
@@ -98,6 +101,7 @@
                                                 <td class='text-center'>$id</td>
                                                 <td class='text-center'>$nombre</td>
                                                 <td class='text-center'>$descripcion</td>
+                                                <td class='text-center'>$activo</td>
                                                 <td class='text-center'>$botonEditar</td>
                                                 <td class='text-center'>$botonEliminar</td>
                                             </tr>
@@ -133,7 +137,7 @@
                         </div>
                     </div>
                     <input type="hidden" id="formaction_departamento_accion" name="formaction" value="">
-                    <input type="hidden" id="id_departamento_accion" name="id_departamento" value="">
+                    <input type="hidden" id="id_tallas_accion" name="id_tallas" value="">
                 </div>
             </form>
         </div>
@@ -188,7 +192,7 @@
                         </div>
                     </div>
                     <input type="hidden" id="formaction_departamento" name="formaction" value="create_DB">
-                    <input type="hidden" id="id_edit" name="id_departamento" value="">
+                    <input type="hidden" id="id_tallas" name="id_tallas" value="">
                 </div>
             </form>
         </div>
@@ -200,7 +204,7 @@
             function establecer_agregar() {
                 $("#form_departamento")      .trigger("reset")
                 $("#formaction_departamento").val("create_DB")
-                $("#id_edit")                .val("")
+                $("#id_tallas")                .val("")
                 $("#texto_Modal_metodo")     .html("Nueva talla de uniforme")
             }
 
@@ -210,7 +214,7 @@
                 $("#formaction_departamento").val("edit_DB")
 
                 $("#texto_Modal_metodo").html(`Modificar talla de uniforme`)
-                $("#id_edit")           .val(informacion.id)
+                $("#id_tallas")           .val(informacion.id)
 
                 $("#nombre").val(informacion.nombre)
                 $("#id_sexo").val(informacion.id_sexo)
@@ -219,14 +223,14 @@
             function eliminar(informacion) {
                 informacion = JSON.parse(informacion)
                 $("#formaction_departamento_accion").val('deleted_DB')
-                $("#id_departamento_accion").val(informacion.id)
+                $("#id_tallas_accion").val(informacion.id)
 
                 mensaje = `
-                    Desea borrar '<b>${informacion.nombre}</b>'
+                    Desea bloquear '<b>${informacion.nombre}</b>'
                 `;
 
                 texto = `
-                    Borrar
+                    Bloquear
                 `;
                 
                 $("#texto_accion").html(texto)

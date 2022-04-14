@@ -51,6 +51,7 @@
                                 <tr>
                                     <th scope="col" class="text-center">Id</th>
                                     <th scope="col" class="text-center">Nombre</th>
+                                    <th scope="col" class="text-center">Activo</th>
                                     <th scope="col" class="text-center">Editar</th>
                                     <th scope="col" class="text-center">Eliminar</th>
                                 </tr>
@@ -62,6 +63,7 @@
                                     while ($row = $listado_items->fetch()) {
                                         $id = $row["id"];
                                         $nombre = $row["nombre"];
+                                        $activo = ($row["activo"])? "Activo" : "Bloqueado";
 
                                         $informacion = htmlentities(json_encode($row));
 
@@ -74,9 +76,9 @@
                                         ';
 
                                         $botonEliminar = '
-                                            <button type="button" class="btn btn-danger btn-icon-only btn-sm" data-toggle="tooltip" data-placement="bottom" title="Eliminar" onclick="eliminar(\''.$informacion.'\')">
+                                            <button type="button" class="btn btn-danger btn-icon-only btn-sm" data-toggle="tooltip" data-placement="bottom" title="Bloquear" onclick="eliminar(\''.$informacion.'\')">
                                                 <span class="btn-inner--icon">
-                                                    <i class="far fa-trash-alt"></i>
+                                                    <i class="fas fa-ban"></i>
                                                 </span>
                                             </button>
                                         ';
@@ -85,6 +87,7 @@
                                             <tr>
                                                 <td class='text-center'>$id</td>
                                                 <td class='text-center'>$nombre</td>
+                                                <td class='text-center'>$activo</td>
                                                 <td class='text-center'>$botonEditar</td>
                                                 <td class='text-center'>$botonEliminar</td>
                                             </tr>
@@ -181,15 +184,15 @@
 
             function eliminar(informacion) {
                 informacion = JSON.parse(informacion)
-                $("#formaction_departamento_accion").val('deleted_DB')
+                $("#formaction_departamento_accion").val('block_DB')
                 $("#id_departamento_accion").val(informacion.id)
 
                 mensaje = `
-                    Desea borrar '<b>${informacion.nombre}</b>'
+                    Desea Bloquear '<b>${informacion.nombre}</b>'
                 `;
 
                 texto = `
-                    Borrar
+                    Bloquear
                 `;
                 
                 $("#texto_accion").html(texto)
