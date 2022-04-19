@@ -14,6 +14,7 @@
     
     /** Verifica si esta logueado */
         $eslogueado=$Quick_function->es_logueado();
+        //echo "<h1>".$eslogueado."</h1>";
         if($eslogueado==true){ header('Location: admin/'); }
     /** Verifica si esta logueado */
     

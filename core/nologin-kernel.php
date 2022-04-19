@@ -10,7 +10,7 @@
 	include_once('quick_function.php');
 	$Quick_function = new Quick_function;
 	
-	$uri="";
+	$uri="../";
 	$url_sistema=$uri."admin/";
 	$url_login=$uri;
 	$url_register=$uri."register-creator.php";
@@ -76,28 +76,24 @@
 		$tiempo=0;
 		$codigo=$Quick_function->codigo();
 		
-		$sql="SELECT * FROM ".TABLA_ADMINISTRADORES." WHERE usuario= :usuario  and estado='1'";
-		$usuario=$Quick_function->SQLDatos_CA($sql, array(':usuario'=>$_POST['username']));
+		$sql="SELECT * FROM ".TBL_USUARIO." WHERE nombre= :nombre and activo='1'";
+		$usuario=$Quick_function->SQLDatos_CA($sql, array(':nombre'=>$_POST['username']));
 		$usuario = $usuario->fetch();
 		
-		if($usuario['usuario']!=''){
-			$Quick_function->SQLDatos_CA("DELETE FROM ".TABLA_USUARIOS_CONECTADOS." WHERE usuario=:usuario", array(':usuario'=>$_POST['username']));
-		
-			$contrasenabd= $usuario['contrasena'];
-			$contrasena= md5($usuario['codigo'].$_POST['password'].LLAVE);
-			$contrasena= hash('ripemd160',$contrasena);
+		if($usuario['nombre']!=''){
+			$contrasenabd= $usuario['contraseña'];
+			$contrasena= md5($_POST['password']);
 			
 			if($contrasenabd==$contrasena){
-				$Path=$Quick_function->TraerParametro('login_path');
-				if(isset($_POST['remember'])){ $abierto=1; $tiempo=60*60*24*365; } else { $abierto=0; $tiempo=60*$Quick_function->TraerParametro('login_time'); }
+				if(isset($_POST['remember'])){ $abierto=1; $tiempo=60*60*24*30; } else { $abierto=0; $tiempo=60*15; }
 				
 				$ip= $Quick_function->get_ip_address();
-				$sql="INSERT INTO ".TABLA_USUARIOS_CONECTADOS." (usuario, hora_acceso, ip, abierto, codigo) values (:usuario, now(), :ip, :abierto, :codigo)";
-				$prueba=$Quick_function->SQLDatos_CA($sql, array(':usuario'=>$_POST['username'], ':ip'=>$ip, ':abierto'=>$abierto, ':codigo'=>$codigo));
-				$_SESSION['usuario']=$_POST['username'];  setcookie("usuario",$_POST['username'],time()+$tiempo, $Path);
+				$_SESSION['usuarioExp']=$_POST['username'];
+				setcookie("usuarioExp",$_POST['username'],time()+$tiempo);
 				
-				$_SESSION['codigo']=$codigo; setcookie("codigo",$codigo,time()+$tiempo, $Path);
-				
+				$_SESSION['codigoExp']=$codigo;
+				setcookie("codigoExp",$codigo,time()+$tiempo);
+
 				header('Location: '.$url_sistema);
 			}
 			else{ header('Location: '.$url_login."?error=5"); }
@@ -272,10 +268,9 @@
 	
 	function logout($url_login, $Quick_function){
 		
-		if(isset($_COOKIE['usuario'])){
-			$Quick_function->SQLDatos_CA("DELETE FROM ".TABLA_USUARIOS_CONECTADOS." WHERE usuario=:usuario", array(':usuario'=>$_COOKIE['usuario']));
-			unset($_SESSION['usuario']);	unset($_COOKIE['usuario']);
-			unset($_SESSION['codigo']);		unset($_COOKIE['codigo']);
+		if(isset($_COOKIE['usuarioExp'])){
+			unset($_SESSION['usuarioExp']);	unset($_COOKIE['usuarioExp']);
+			unset($_SESSION['codigoExp']);		unset($_COOKIE['codigoExp']);
 		}
 		header('Location: '.$url_login);
 	}

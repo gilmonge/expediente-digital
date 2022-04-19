@@ -64,15 +64,16 @@
 		}
 		
 		public function es_logueado(){ /* analiza si esta logueado */
-			if(isset($_COOKIE['usuario'])){ $usuario=$_COOKIE['usuario']; } else{ $usuario=''; }
-			if(isset($_COOKIE['codigo'])){ $codigo=$_COOKIE['codigo']; } else{ $codigo=''; }
+			if(isset($_SESSION['usuarioExp'])){ $usuario=$_SESSION['usuarioExp']; } 
+			else{ $usuario=''; }
 
-			return true;
+			if(isset($_SESSION['codigoExp'])){ $codigo=$_SESSION['codigoExp']; } 
+			else{ $codigo=''; }
 
 			if($usuario != '' && $codigo != ''){
-				$_SESSION['usuario']=$usuario; $_SESSION['codigo']=$codigo; return true;
+				$_SESSION['usuarioExp']=$usuario; $_SESSION['codigoExp']=$codigo; return true;
 			}else{
-				$_SESSION['usuario']=''; $_SESSION['codigo']=''; return false; 
+				$_SESSION['usuarioExp']=''; $_SESSION['codigoExp']=''; return false; 
 			}
         }
 		
@@ -81,7 +82,7 @@
 			$archivo=explode('/', $archivo);
 			$archivo=array_pop($archivo);
 			
-			if(isset($_COOKIE['usuario'])){ $usuario=$_COOKIE['usuario']; }
+			if(isset($_COOKIE['usuarioExp'])){ $usuario=$_COOKIE['usuarioExp']; }
 			else{ $usuario=''; }
 			
 			$par= $this->SQLDatos_CA("SELECT * FROM ".TABLA_ADMINISTRADORES." WHERE usuario=:usuario", array(':usuario'=>$usuario));
@@ -109,8 +110,8 @@
         }
 		
         public function datos_administrador(){ /* analiza si esta logueado */
-            if(isset($_COOKIE['usuario'])){
-                $par= $this->SQLDatos_SA("SELECT * FROM ".TABLA_ADMINISTRADORES." WHERE usuario='".$_COOKIE['usuario']."' ");
+            if(isset($_COOKIE['usuarioExp'])){
+                $par= $this->SQLDatos_SA("SELECT * FROM ".TABLA_ADMINISTRADORES." WHERE usuario='".$_COOKIE['usuarioExp']."' ");
                 $admin=$par->fetch();
                 return $admin;
             }
