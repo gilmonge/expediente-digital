@@ -34,7 +34,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12 mt-md-0 text-md-right">
-                        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#AgregarDato">
+                        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#AgregarDato" onclick="establecer_agregar()">
                             Agregar
                         </button>
                     </div>
@@ -55,7 +55,7 @@
                                     <th scope="col" class="text-center">Departamento</th>
                                     <th scope="col" class="text-center">Activo</th>
                                     <th scope="col" class="text-center">Editar</th>
-                                    <th scope="col" class="text-center">Eliminar</th>
+                                    <th scope="col" class="text-center">Bloquear</th>
                                 </tr>
                             </thead>
                             <tbody class="expediente-cuerpo-tabla">
@@ -66,6 +66,7 @@
                                                     PUES.id,
                                                     PUES.nombre,
                                                     PUES.salario_base,
+                                                    PUES.activo,
                                                     PUES.nombre AS departamento
                                                 FROM $TBL_PUESTO AS PUES
                                                 INNER JOIN $TBL_DEPARTAMENTO AS DEP

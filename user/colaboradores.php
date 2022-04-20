@@ -80,7 +80,7 @@
                                     <th scope="col" class="text-center">Teléfono</th>
                                     <th scope="col" class="text-center">Información</th>
                                     <th scope="col" class="text-center">Editar</th>
-                                    <th scope="col" class="text-center">Eliminar</th>
+                                    <th scope="col" class="text-center">Bloquear</th>
                                 </tr>
                             </thead>
                             <tbody class="expediente-cuerpo-tabla">

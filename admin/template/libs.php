@@ -36,7 +36,6 @@
         
         <!-- Rexy Studio JS -->
         <script src="../assets/expediente/js/script.js"></script>
-        <script src="../assets/expediente/js/validaciones.js"></script>
         
         <script>
             $(document).ready(function () {

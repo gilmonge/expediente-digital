@@ -29,7 +29,7 @@
                     <div class="row align-items-center justify-content-md-between pb-4">
                         <div class="col-md-6">
                             <div class="copyright text-sm font-weight-bold text-center text-md-left">
-                                © 2020 <a href="https://rexystudios.com" class="font-weight-bold" target="_blank">Sistema control de expediente</a>. Todos los derechos reservados.
+                                © <?php echo date('Y'); ?> <a href="https://rexystudios.com" class="font-weight-bold" target="_blank">Sistema control de expediente</a>. Todos los derechos reservados.
                             </div>
                         </div>
                         <div class="col-md-6">
