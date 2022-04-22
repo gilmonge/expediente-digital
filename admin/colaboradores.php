@@ -78,69 +78,69 @@
                                     <th scope="col" class="text-center">Nombre</th>
                                     <th scope="col" class="text-center">Correo</th>
                                     <th scope="col" class="text-center">Teléfono</th>
+                                    <th scope="col" class="text-center">Salario actual</th>
+                                    <th scope="col" class="text-center">Activo</th>
                                     <th scope="col" class="text-center">Información</th>
                                     <th scope="col" class="text-center">Editar</th>
                                     <th scope="col" class="text-center">Bloquear</th>
                                 </tr>
                             </thead>
                             <tbody class="expediente-cuerpo-tabla">
-                                <tr>
-                                    <td class="text-center">303330333</td>
-                                    <th class="text-center" scope="row">Nombre colaborador</th>
-                                    <th class="text-center" scope="row">mail@mail.com</th>
-                                    <th class="text-center" scope="row">84848484</th>
+                                <?php
+                                    $select = "SELECT * FROM ".TBL_EMPLEADO;
+                                    $listado_items= $Quick_function->SQLDatos_SA($select);
+                                    while ($row = $listado_items->fetch()) {
+                                        $id = $row["id"];
+                                        $cedula = $row["cedula"];
+                                        $nombre = $row["nombre"].' '.$row["apellido"];
+                                        $correo = $row["correo"];
+                                        $telefono = $row["telefono"];
+                                        $salario_actual = $row["salario_actual"];
+                                        $activo = ($row["activo"])? "Activo" : "Bloqueado";
 
-                                    <td class="text-center">
-                                        <button type="button" class="btn btn-outline-dark btn-icon-only btn-sm" data-toggle="modal" data-target="#informacion_tercero" onclick="mostrar_informacion('0')">
-                                            <span class="btn-inner--icon">
-                                                <i class="fas fa-info"></i>
-                                            </span>
-                                        </button>
-                                    </td>
-                                    <td class="text-center">
-                                        <a class="btn btn-dark btn-icon-only btn-sm" href="colaboradores-edit.php?id=1">
-                                            <span class="btn-inner--icon">
-                                                <i class="fas fa-pencil-alt"></i>
-                                            </span>
-                                        </a>
-                                    </td>
-                                    <td class="text-center">
-                                        <button type="button" class="btn btn-danger btn-icon-only btn-sm" data-toggle="tooltip" data-placement="bottom" title="Bloquear" onclick="eliminar('0')">
-                                            <span class="btn-inner--icon">
-                                                <i class="fas fa-ban"></i>
-                                            </span>
-                                        </button>
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <td class="text-center">303330333</td>
-                                    <th class="text-center" scope="row">Nombre colaborador</th>
-                                    <th class="text-center" scope="row">mail@mail.com</th>
-                                    <th class="text-center" scope="row">84848484</th>
+                                        $informacion = htmlentities(json_encode($row));
 
-                                    <td class="text-center">
-                                        <button type="button" class="btn btn-outline-dark btn-icon-only btn-sm" data-toggle="modal" data-target="#informacion_tercero" onclick="mostrar_informacion('0')">
-                                            <span class="btn-inner--icon">
-                                                <i class="fas fa-info"></i>
-                                            </span>
-                                        </button>
-                                    </td>
-                                    <td class="text-center">
-                                        <a class="btn btn-dark btn-icon-only btn-sm" href="colaboradores-edit.php?id=1">
-                                            <span class="btn-inner--icon">
-                                                <i class="fas fa-pencil-alt"></i>
-                                            </span>
-                                        </a>
-                                    </td>
-                                    <td class="text-center">
-                                        <button type="button" class="btn btn-danger btn-icon-only btn-sm" data-toggle="tooltip" data-placement="bottom" title="Eliminar" onclick="eliminar('0')">
-                                            <span class="btn-inner--icon">
-                                                <i class="far fa-trash-alt"></i>
-                                            </span>
-                                        </button>
-                                    </td>
-                                </tr>
+                                        $botonEditar = '
+                                            <button type="button" class="btn btn-dark btn-icon-only btn-sm" data-toggle="modal" data-target="#AgregarDato" onclick="establecer_editar(\''.$informacion.'\')">
+                                                <span class="btn-inner--icon">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                </span>
+                                            </button>
+                                        ';
+
+                                        $botonEliminar = '
+                                            <button type="button" class="btn btn-danger btn-icon-only btn-sm" data-toggle="tooltip" data-placement="bottom" title="Bloquear" onclick="eliminar(\''.$informacion.'\')">
+                                                <span class="btn-inner--icon">
+                                                    <i class="fas fa-ban"></i>
+                                                </span>
+                                            </button>
+                                        ';
+
+                                        $btnInformacion = '
+                                            <td class="text-center">
+                                                <button type="button" class="btn btn-outline-dark btn-icon-only btn-sm" data-toggle="modal" data-target="#informacion_colaboradores" onclick="mostrar_informacion(\'0\')">
+                                                    <span class="btn-inner--icon">
+                                                        <i class="fas fa-info"></i>
+                                                    </span>
+                                                </button>
+                                            </td>
+                                        ';
+
+                                        echo "
+                                            <tr>
+                                                <td class='text-center'>$cedula</td>
+                                                <td class='text-center'>$nombre</td>
+                                                <td class='text-center'>$correo</td>
+                                                <td class='text-center'>$telefono</td>
+                                                <td class='text-center'>$salario_actual</td>
+                                                <td class='text-center'>$activo</td>
+                                                $btnInformacion
+                                                <td class='text-center'>$botonEditar</td>
+                                                <td class='text-center'>$botonEliminar</td>
+                                            </tr>
+                                        ";
+                                    }
+                                ?>
                             </tbody>
                         </table>
                     </div>
@@ -151,7 +151,7 @@
 
         <!-- Modal -->
         <div class="modal fade" id="AgregarDato" tabindex="-1" role="dialog" aria-hidden="true">
-            <form id="formTercero" action="procedures/terceros.php" method="post">
+            <form id="formcolaboradores" action="procedures/colaboradores.php" method="post">
                 <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -161,77 +161,250 @@
                             </button>
                         </div>
                         <div class="modal-body row">
-                            
+
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <small class="form-text text-dark"><span class="asteriscos">* </span>Tipo de identificación</small>
-                                    <select name="tipo_identificacion" id="tipo_identificacion"  class="selectpicker" data-live-search="true">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Cédula</span></small>
+                                    <input type="text" class="form-control" placeholder="Cédula" name="cedula" id="cedula">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Nombre</span></small>
+                                    <input type="text" class="form-control" placeholder="Nombre" name="nombre" id="nombre">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Apellido</span></small>
+                                    <input type="text" class="form-control" placeholder="Apellido" name="apellido" id="apellido">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Fecha nacimiento</span></small>
+                                    <input type="text" class="form-control" placeholder="Fecha nacimiento" name="fecha_nacimiento" id="fecha_nacimiento">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Tipo de licencia</span></small>
+
+                                    <select name="tipo_licencia" id="tipo_licencia" aria-required="">
+                                        <option value='No tiene'>No tiene</option>
+                                        <option value='A1'>A1</option>
+                                        <option value='A2'>A2</option>
+                                        <option value='A3'>A3</option>
+                                        <option value='B1'>B1</option>
+                                        <option value='B2'>B2</option>
+                                        <option value='B3'>B3</option>
+                                        <option value='B4'>B4</option>
+                                        <option value='C1'>C1</option>
+                                        <option value='C2'>C2</option>
+                                        <option value='D1'>D1</option>
+                                        <option value='D2'>D2</option>
+                                        <option value='D3'>D3</option>
+                                        <option value='E1'>E1</option>
+                                        <option value='E2'>E2</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Télefono</span></small>
+                                    <input type="text" class="form-control" placeholder="Télefono" name="telefono" id="telefono">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Correo</span></small>
+                                    <input type="text" class="form-control" placeholder="Correo" name="correo" id="correo">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Residencia</span></small>
+                                    <input type="text" class="form-control" placeholder="Residencia" name="residencia" id="residencia">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Hijos</span></small>
+                                    <input type="text" class="form-control" placeholder="Hijos" name="hijos" id="hijos">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Salario actual</span></small>
+                                    <input type="text" class="form-control" placeholder="Salario actual" name="salario_actual" id="salario_actual">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Estado civil</span></small>
+                                    <input type="text" class="form-control" placeholder="Estado civil" name="estado_civil" id="estado_civil">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Banco</span></small>
+                                    <input type="text" class="form-control" placeholder="Banco" name="banco" id="banco">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Cuenta IBAN</span></small>
+                                    <input type="text" class="form-control" placeholder="Cuenta IBAN" name="cuenta_iban" id="cuenta_iban">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Cuenta cliente</span></small>
+                                    <input type="text" class="form-control" placeholder="Cuenta cliente" name="cuenta_cliente" id="cuenta_cliente">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Número SINPE</span></small>
+                                    <input type="text" class="form-control" placeholder="Número SINPE" name="numero_sinpe" id="numero_sinpe">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Fecha contratación</span></small>
+                                    <input type="text" class="form-control" placeholder="Fecha contratación" name="fecha_contratacion" id="fecha_contratacion">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Fecha ingreso</span></small>
+                                    <input type="text" class="form-control" placeholder="Fecha ingreso" name="fecha_ingreso" id="fecha_ingreso">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Grado académico</span></small>
+
+                                    <select name="id_grado_academico" id="id_grado_academico" aria-required="">
                                         <?php
-                                            foreach ($TIPOS_IDENTIFICACION as $key => $value) {
-                                                echo "<option value='".$value['id']."'>".$value['nombre']."</option>";
+                                            $select = "SELECT * FROM ".TBL_GRADO_ACADEMICO. " WHERE activo = 1" ;
+                                            $listado_items= $Quick_function->SQLDatos_SA($select);
+                                            while ($row = $listado_items->fetch()) {
+                                                $id = $row["id"];
+                                                $nombre = $row["nombre"];
+
+                                                $informacion = htmlentities(json_encode($row));
+
+                                                echo "
+                                                    <option value='$id'>$nombre</option>
+                                                ";
                                             }
                                         ?>
                                     </select>
                                 </div>
-
-                                <div class="form-group">
-                                    <small class="form-text text-dark"><span class="asteriscos">* </span>Identificación</small>
-                                    <input type="text" class="form-control" placeholder="Identificación" name="identificacion" id="identificacion">
-                                </div>
-        
-                                <div class="form-group">
-                                    <small class="form-text text-dark"><span class="asteriscos">* </span>Nombre</small>
-                                    <input type="text" class="form-control" placeholder="Nombre" name="nombre" id="nombre">
-                                </div>
-        
-                                <div class="form-group">
-                                    <small class="form-text text-dark"><span class="asteriscos">* </span>Apellido</small>
-                                    <input type="text" class="form-control" placeholder="Apellido" name="apellido" id="apellido">
-                                </div>
-                                
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <small class="form-text text-dark"><span class="asteriscos">* </span>Correo</small>
-                                    <input type="text" class="form-control" placeholder="Correo" name="correo" id="correo">
-                                </div>
-        
-                                <div class="form-group">
-                                    <small class="form-text text-dark"><span class="asteriscos">* </span>Teléfono</small>
-                                    <input type="text" name="telefono" id="telefono" class="form-control" placeholder="Teléfono">
-                                </div>
-        
-                                <div class="form-group">
-                                    <small class="form-text text-dark">Dirección (alternativo)</small>
-                                    <textarea class="form-control" name="direccion" id="direccion" placeholder="Dirección (alternativo)" rows="3" resize="none"></textarea>
-                                </div>
-        
-                                <div class="form-group">
-                                    <small class="form-text text-dark"><span class="asteriscos">* </span>Clasificación</small>
-                                    <select name="clasificacion" id="clasificacion"  class="selectpicker" data-live-search="true">
-                                        <!-- <option value="1">Proveedor</option> -->
-                                        <option value="2">Cliente</option>
-                                        <option value="3">Cliente / Proveedor</option>
+                                    <small class="form-text text-dark"><span class="asteriscos">* Puesto</span></small>
+
+                                    <select name="id_puesto" id="id_puesto" aria-required="">
+                                        <?php
+                                            $select = "SELECT * FROM ".TBL_PUESTO." WHERE activo = 1";
+                                            $listado_items= $Quick_function->SQLDatos_SA($select);
+                                            while ($row = $listado_items->fetch()) {
+                                                $id = $row["id"];
+                                                $nombre = $row["nombre"];
+
+                                                $informacion = htmlentities(json_encode($row));
+
+                                                echo "
+                                                    <option value='$id'>$nombre</option>
+                                                ";
+                                            }
+                                        ?>
                                     </select>
                                 </div>
                             </div>
-    
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Sexo</span></small>
+
+                                    <select name="id_sexo" id="id_sexo" aria-required="">
+                                        <?php
+                                            $select = "SELECT * FROM ".TBL_SEXO." WHERE activo = 1";
+                                            $listado_items= $Quick_function->SQLDatos_SA($select);
+                                            while ($row = $listado_items->fetch()) {
+                                                $id = $row["id"];
+                                                $descripcion = $row["descripcion"];
+
+                                                $informacion = htmlentities(json_encode($row));
+
+                                                echo "
+                                                    <option value='$id'>$descripcion</option>
+                                                ";
+                                            }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Sucursal</span></small>
+
+                                    <select name="id_sucursal" id="id_sucursal" aria-required="">
+                                        <?php
+                                            $select = "SELECT * FROM ".TBL_SUCURSALES." WHERE activo = 1";
+                                            $listado_items= $Quick_function->SQLDatos_SA($select);
+                                            while ($row = $listado_items->fetch()) {
+                                                $id = $row["id"];
+                                                $nombre = $row["nombre"];
+
+                                                $informacion = htmlentities(json_encode($row));
+
+                                                echo "
+                                                    <option value='$id'>$nombre</option>
+                                                ";
+                                            }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
+
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                             <button type="submit" class="btn btn-dark">Guardar</button>
                         </div>
                     </div>
-                    <input type="hidden" id="formaction_tercero" name="formaction" value="create_DB">
-                    <input type="hidden" id="id_tercero_edit" name="id_tercero" value="">
+                    <input type="hidden" id="formaction_colaboradores" name="formaction" value="create_DB">
+                    <input type="hidden" id="id_colaboradores_edit" name="id_colaboradores" value="">
                     <input type="hidden" name="origen" value="2">
                 </div>
             </form>
         </div>
 
-        <div class="modal fade" id="acciones_tercero" tabindex="-1" role="dialog" aria-hidden="true">
-            <form action="procedures/terceros.php" method="post">
+        <div class="modal fade" id="acciones_colaboradores" tabindex="-1" role="dialog" aria-hidden="true">
+            <form action="procedures/colaboradores.php" method="post">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -251,14 +424,14 @@
                             <button type="submit" class="btn btn-dark">Guardar</button>
                         </div>
                     </div>
-                    <input type="hidden" id="formaction_tercero_accion" name="formaction" value="">
-                    <input type="hidden" id="id_tercero_accion" name="id_tercero" value="">
+                    <input type="hidden" id="formaction_colaboradores_accion" name="formaction" value="">
+                    <input type="hidden" id="id_colaboradores_accion" name="id_colaboradores" value="">
                     <input type="hidden" name="origen" value="2">
                 </div>
             </form>
         </div>
         
-        <div class="modal fade" id="informacion_tercero" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal fade" id="informacion_colaboradores" tabindex="-1" role="dialog" aria-hidden="true">
             <form id="form_cuenta" action="procedures/cuentas_contables.php" method="post">
                 <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
                     <div class="modal-content">
@@ -315,8 +488,8 @@
         
         <script type="text/javascript">
             function establecer_agregar() {
-                $("#formTercero")             .trigger("reset")
-                $("#formaction_tercero")    .val("create_DB")
+                $("#formcolaboradores")             .trigger("reset")
+                $("#formaction_colaboradores")    .val("create_DB")
                 $("#id_item_edit")          .val("")
                 $("#texto_Modal_metodo")    .html("Nuevo item")
                 refrescar_selectpicker()
@@ -324,11 +497,11 @@
             
             function establecer_editar(informacion) {
                 informacion = JSON.parse(informacion)
-                $("#formTercero").trigger("reset")
-                $("#formaction_tercero").val("edit_DB")
+                $("#formcolaboradores").trigger("reset")
+                $("#formaction_colaboradores").val("edit_DB")
                 
                 $("#texto_Modal_metodo")    .html(`Modificar ${informacion.nombre}`)
-                $("#id_tercero_edit")       .val(informacion.id)
+                $("#id_colaboradores_edit")       .val(informacion.id)
 
                 $("#tipo_identificacion")   .val(informacion.tipo_identificacion)
                 $("#identificacion")        .val(informacion.identificacion)
@@ -345,8 +518,8 @@
             function activarInactivar(informacion) {
                 informacion = JSON.parse(informacion)
                 $("#texto_accion").html('Activar / Inactivar item')
-                $("#formaction_tercero_accion").val('activate_DB')
-                $("#id_tercero_accion").val(informacion.id)
+                $("#formaction_colaboradores_accion").val('activate_DB')
+                $("#id_colaboradores_accion").val(informacion.id)
 
                 mensaje = (informacion.activo == 1)? `
                     Desea inactivar el cliente ${informacion.nombre}
@@ -356,30 +529,27 @@
                 
                 $('#AI_Mensaje_confirmacion').html(mensaje)
 
-                $('#acciones_tercero').modal('show')
+                $('#acciones_colaboradores').modal('show')
             }
 
             function eliminar(informacion) {
                 informacion = JSON.parse(informacion)
-                $("#formaction_tercero_accion").val('block_DB')
-                $("#id_tercero_accion").val(informacion.id)
+                $("#formaction_colaboradores_accion").val('block_DB')
+                $("#id_colaboradores_accion").val(informacion.id)
 
-                mensaje = (informacion.borrado == 1)? `
-                    Desea recuperar el cliente ${informacion.nombre}
-                `: `
-                    Desea bloquear el cliente ${informacion.nombre}
+                mensaje = `
+                    Desea bloquear '<b>${informacion.nombre}</b>'
                 `;
 
-                texto = (informacion.borrado == 1)? `
-                    Recuperar cliente
-                `: `
-                    Bloquear el cliente
+                texto = `
+                    Bloquear
                 `;
                 
                 $("#texto_accion").html(texto)
+                $("#btn_accion").html(texto)
                 $('#AI_Mensaje_confirmacion').html(mensaje)
 
-                $('#acciones_tercero').modal('show')
+                $('#acciones_colaboradores').modal('show')
             }
 
             function mostrar_informacion(informacion) {
