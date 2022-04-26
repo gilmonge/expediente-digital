@@ -390,6 +390,18 @@
                                 </div>
                             </div>
 
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Esquema de vacunas</span></small>
+
+                                    <select name="vacunas" id="vacunas" aria-required="">
+                                        <option value='1'>Completo</option>
+                                        <option value='2'>Incompleto</option>
+                                        <option value='3'>Sin vacunas</option>
+                                    </select>
+                                </div>
+                            </div>
+
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -503,14 +515,28 @@
                 $("#texto_Modal_metodo")    .html(`Modificar ${informacion.nombre}`)
                 $("#id_colaboradores_edit")       .val(informacion.id)
 
-                $("#tipo_identificacion")   .val(informacion.tipo_identificacion)
-                $("#identificacion")        .val(informacion.identificacion)
-                $("#nombre")                .val(informacion.nombre)
-                $("#apellido")              .val(informacion.apellido)
-                $("#correo")                .val(informacion.correo)
-                $("#telefono")              .val(informacion.telefono)
-                $("#direccion")             .val(informacion.direccion)
-                $("#clasificacion")         .val(informacion.clasificacion)
+                $("#nombre")   .val(informacion.nombre)
+                $("#apellido")   .val(informacion.apellido)
+                $("#fecha_nacimiento")   .val(informacion.fecha_nacimiento)
+                $("#tipo_licencia")   .val(informacion.tipo_licencia)
+                $("#cedula")   .val(informacion.cedula)
+                $("#telefono")   .val(informacion.telefono)
+                $("#correo")   .val(informacion.correo)
+                $("#residencia")   .val(informacion.residencia)
+                $("#hijos")   .val(informacion.hijos)
+                $("#salario_actual")   .val(informacion.salario_actual)
+                $("#estado_civil")   .val(informacion.estado_civil)
+                $("#banco")   .val(informacion.banco)
+                $("#cuenta_iban")   .val(informacion.cuenta_iban)
+                $("#cuenta_cliente")   .val(informacion.cuenta_cliente)
+                $("#numero_sinpe")   .val(informacion.numero_sinpe)
+                $("#fecha_contratacion")   .val(informacion.fecha_contratacion)
+                $("#fecha_ingreso")   .val(informacion.fecha_ingreso)
+                $("#id_grado_academico")   .val(informacion.id_grado_academico)
+                $("#id_puesto")   .val(informacion.id_puesto)
+                $("#id_sexo")   .val(informacion.id_sexo)
+                $("#id_sucursal")   .val(informacion.id_sucursal)
+                $("#vacunas")   .val(informacion.vacunas)
 
                 refrescar_selectpicker()
             }

@@ -71,6 +71,7 @@
                 ':id_puesto'            => (isset($Data['id_puesto']))  ? strip_tags(trim($Data["id_puesto"])) : "",
                 ':id_sexo'              => (isset($Data['id_sexo']))  ? strip_tags(trim($Data["id_sexo"])) : "",
                 ':id_sucursal'          => (isset($Data['id_sucursal']))  ? strip_tags(trim($Data["id_sucursal"])) : "",
+                ':vacunas'              => (isset($Data['vacunas']))  ? strip_tags(trim($Data["vacunas"])) : "",
             );
         /* Inicia los datos de la DB */
 
@@ -99,6 +100,7 @@
                         id_puesto           = :id_puesto,
                         id_sexo             = :id_sexo,
                         id_sucursal         = :id_sucursal,
+                        vacunas             = :vacunas,
                         activo              = 1
             ";
         /* Declara el SQL */
@@ -115,9 +117,29 @@
     function editarDB($url_list, $Quick_function, $Data){
         /* Inicia los datos de la DB */
             $datos  = array(
-                ':id'     => (isset($Data['id_cursos']))? strip_tags(trim($Data["id_cursos"])) : 0,
-                ':nombre' => (isset($Data['nombre']))? strip_tags(trim($Data["nombre"])) : "",
-                ':tiempo_capacitacion' => (isset($Data['tiempo_capacitacion']))  ? strip_tags(trim($Data["tiempo_capacitacion"])) : "",
+                ':id'                   => (isset($Data['id_cursos']))? strip_tags(trim($Data["id_cursos"])) : 0,
+                ':nombre'               => (isset($Data['nombre']))  ? strip_tags(trim($Data["nombre"])) : "",
+                ':apellido'             => (isset($Data['apellido']))  ? strip_tags(trim($Data["apellido"])) : "",
+                ':fecha_nacimiento'     => (isset($Data['fecha_nacimiento']))  ? strip_tags(trim($Data["fecha_nacimiento"])) : "",
+                ':tipo_licencia'        => (isset($Data['tipo_licencia']))  ? strip_tags(trim($Data["tipo_licencia"])) : "",
+                ':cedula'               => (isset($Data['cedula']))  ? strip_tags(trim($Data["cedula"])) : "",
+                ':telefono'             => (isset($Data['telefono']))  ? strip_tags(trim($Data["telefono"])) : "",
+                ':correo'               => (isset($Data['correo']))  ? strip_tags(trim($Data["correo"])) : "",
+                ':residencia'           => (isset($Data['residencia']))  ? strip_tags(trim($Data["residencia"])) : "",
+                ':hijos'                => (isset($Data['hijos']))  ? strip_tags(trim($Data["hijos"])) : "",
+                ':salario_actual'       => (isset($Data['salario_actual']))  ? strip_tags(trim($Data["salario_actual"])) : "",
+                ':estado_civil'         => (isset($Data['estado_civil']))  ? strip_tags(trim($Data["estado_civil"])) : "",
+                ':banco'                => (isset($Data['banco']))  ? strip_tags(trim($Data["banco"])) : "",
+                ':cuenta_iban'          => (isset($Data['cuenta_iban']))  ? strip_tags(trim($Data["cuenta_iban"])) : "",
+                ':cuenta_cliente'       => (isset($Data['cuenta_cliente']))  ? strip_tags(trim($Data["cuenta_cliente"])) : "",
+                ':numero_sinpe'         => (isset($Data['numero_sinpe']))  ? strip_tags(trim($Data["numero_sinpe"])) : "",
+                ':fecha_contratacion'   => (isset($Data['fecha_contratacion']))  ? strip_tags(trim($Data["fecha_contratacion"])) : "",
+                ':fecha_ingreso'        => (isset($Data['fecha_ingreso']))  ? strip_tags(trim($Data["fecha_ingreso"])) : "",
+                ':id_grado_academico'   => (isset($Data['id_grado_academico']))  ? strip_tags(trim($Data["id_grado_academico"])) : "",
+                ':id_puesto'            => (isset($Data['id_puesto']))  ? strip_tags(trim($Data["id_puesto"])) : "",
+                ':id_sexo'              => (isset($Data['id_sexo']))  ? strip_tags(trim($Data["id_sexo"])) : "",
+                ':id_sucursal'          => (isset($Data['id_sucursal']))  ? strip_tags(trim($Data["id_sucursal"])) : "",
+                ':vacunas'              => (isset($Data['vacunas']))  ? strip_tags(trim($Data["vacunas"])) : "",
             );
         /* Inicia los datos de la DB */
 
@@ -146,6 +168,7 @@
                         id_puesto           = :id_puesto,
                         id_sexo             = :id_sexo,
                         id_sucursal         = :id_sucursal,
+                        vacunas             = :vacunas
                     WHERE
                         id = :id
             ";
