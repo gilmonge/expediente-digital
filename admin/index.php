@@ -47,7 +47,7 @@
                                 <a href="#" class="d-block h5 mt-3">Colaboradores</a>
                                 <div class="row align-items-center mt-4">
                                     <div class="col-12">
-                                        <a href="colaboradores.php" class="btn btn-sm btn-block btn-primary btn-primary-dashboard">Ir al módulo</a>
+                                        <a href="reportes.php" class="btn btn-sm btn-block btn-primary btn-primary-dashboard">Ir al módulo</a>
                                     </div>
                                 </div>
                             </div>
