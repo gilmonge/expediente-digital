@@ -83,37 +83,37 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <small class="form-text text-dark"><span class="asteriscos">* Cédula</span></small>
-                                    <input type="text" class="form-control" placeholder="Cédula" name="cedula" id="cedula">
+                                    <small class="form-text text-dark">Cédula</small>
+                                    <input disabled type="text" class="form-control" placeholder="Cédula" name="cedula" id="cedula">
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <small class="form-text text-dark"><span class="asteriscos">* Nombre</span></small>
-                                    <input type="text" class="form-control" placeholder="Nombre" name="nombre" id="nombre">
+                                    <small class="form-text text-dark">Nombre</small>
+                                    <input disabled type="text" class="form-control" placeholder="Nombre" name="nombre" id="nombre">
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <small class="form-text text-dark"><span class="asteriscos">* Apellido</span></small>
-                                    <input type="text" class="form-control" placeholder="Apellido" name="apellido" id="apellido">
+                                    <small class="form-text text-dark">Apellido</small>
+                                    <input disabled type="text" class="form-control" placeholder="Apellido" name="apellido" id="apellido">
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <small class="form-text text-dark"><span class="asteriscos">* Fecha nacimiento</span></small>
-                                    <input type="text" class="form-control" placeholder="Fecha nacimiento" name="fecha_nacimiento" id="fecha_nacimiento">
+                                    <small class="form-text text-dark">Fecha nacimiento</small>
+                                    <input disabled type="text" class="form-control" placeholder="Fecha nacimiento" name="fecha_nacimiento" id="fecha_nacimiento">
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <small class="form-text text-dark"><span class="asteriscos">* Tipo de licencia</span></small>
+                                    <small class="form-text text-dark">Tipo de licencia</small>
 
-                                    <select name="tipo_licencia" id="tipo_licencia" aria-required="">
+                                    <select disabled name="tipo_licencia" id="tipo_licencia" aria-required="">
                                         <option value='No tiene'>No tiene</option>
                                         <option value='A1'>A1</option>
                                         <option value='A2'>A2</option>
@@ -135,93 +135,93 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <small class="form-text text-dark"><span class="asteriscos">* Télefono</span></small>
-                                    <input type="text" class="form-control" placeholder="Télefono" name="telefono" id="telefono">
+                                    <small class="form-text text-dark">Télefono</span></small>
+                                    <input disabled type="text" class="form-control" placeholder="Télefono" name="telefono" id="telefono">
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <small class="form-text text-dark"><span class="asteriscos">* Correo</span></small>
-                                    <input type="text" class="form-control" placeholder="Correo" name="correo" id="correo">
+                                    <small class="form-text text-dark">Correo</span></small>
+                                    <input disabled type="text" class="form-control" placeholder="Correo" name="correo" id="correo">
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <small class="form-text text-dark"><span class="asteriscos">* Residencia</span></small>
-                                    <input type="text" class="form-control" placeholder="Residencia" name="residencia" id="residencia">
+                                    <small class="form-text text-dark">Residencia</small>
+                                    <input disabled type="text" class="form-control" placeholder="Residencia" name="residencia" id="residencia">
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <small class="form-text text-dark"><span class="asteriscos">* Hijos</span></small>
-                                    <input type="text" class="form-control" placeholder="Hijos" name="hijos" id="hijos">
+                                    <small class="form-text text-dark">Hijos</small>
+                                    <input disabled type="text" class="form-control" placeholder="Hijos" name="hijos" id="hijos">
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <small class="form-text text-dark"><span class="asteriscos">* Salario actual</span></small>
-                                    <input type="text" class="form-control" placeholder="Salario actual" name="salario_actual" id="salario_actual">
+                                    <small class="form-text text-dark">Salario actual</small>
+                                    <input disabled type="text" class="form-control" placeholder="Salario actual" name="salario_actual" id="salario_actual">
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <small class="form-text text-dark"><span class="asteriscos">* Estado civil</span></small>
-                                    <input type="text" class="form-control" placeholder="Estado civil" name="estado_civil" id="estado_civil">
+                                    <small class="form-text text-dark">Estado civil</small>
+                                    <input  disabled type="text" class="form-control" placeholder="Estado civil" name="estado_civil" id="estado_civil">
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <small class="form-text text-dark"><span class="asteriscos">* Banco</span></small>
-                                    <input type="text" class="form-control" placeholder="Banco" name="banco" id="banco">
+                                    <small class="form-text text-dark">Banco</small>
+                                    <input disabled type="text" class="form-control" placeholder="Banco" name="banco" id="banco">
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <small class="form-text text-dark"><span class="asteriscos">* Cuenta IBAN</span></small>
-                                    <input type="text" class="form-control" placeholder="Cuenta IBAN" name="cuenta_iban" id="cuenta_iban">
+                                    <small class="form-text text-dark">Cuenta IBAN</small>
+                                    <input disabled type="text" class="form-control" placeholder="Cuenta IBAN" name="cuenta_iban" id="cuenta_iban">
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <small class="form-text text-dark"><span class="asteriscos">* Cuenta cliente</span></small>
-                                    <input type="text" class="form-control" placeholder="Cuenta cliente" name="cuenta_cliente" id="cuenta_cliente">
+                                    <small class="form-text text-dark">Cuenta cliente</small>
+                                    <input disabled type="text" class="form-control" placeholder="Cuenta cliente" name="cuenta_cliente" id="cuenta_cliente">
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <small class="form-text text-dark"><span class="asteriscos">* Número SINPE</span></small>
-                                    <input type="text" class="form-control" placeholder="Número SINPE" name="numero_sinpe" id="numero_sinpe">
+                                    <small class="form-text text-dark">Número SINPE</small>
+                                    <input type="text" class="form-control" placeholder="Número SINPE" name="numero_sinpe" id="numero_sinpe" disabled>
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <small class="form-text text-dark"><span class="asteriscos">* Fecha contratación</span></small>
-                                    <input type="text" class="form-control" placeholder="Fecha contratación" name="fecha_contratacion" id="fecha_contratacion">
+                                    <small class="form-text text-dark">Fecha contratación</small>
+                                    <input type="text" class="form-control" placeholder="Fecha contratación" name="fecha_contratacion" id="fecha_contratacion" disabled>
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <small class="form-text text-dark"><span class="asteriscos">* Fecha ingreso</span></small>
-                                    <input type="text" class="form-control" placeholder="Fecha ingreso" name="fecha_ingreso" id="fecha_ingreso">
+                                    <small class="form-text text-dark">Fecha ingreso</small>
+                                    <input type="text" class="form-control" placeholder="Fecha ingreso" name="fecha_ingreso" id="fecha_ingreso" disabled>
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <small class="form-text text-dark"><span class="asteriscos">* Grado académico</span></small>
+                                    <small class="form-text text-dark">Grado académico</small>
 
-                                    <select name="id_grado_academico" id="id_grado_academico" aria-required="">
+                                    <select name="id_grado_academico" id="id_grado_academico" aria-required="" disabled>
                                         <?php
                                             $select = "SELECT * FROM ".TBL_GRADO_ACADEMICO. " WHERE activo = 1" ;
                                             $listado_items= $Quick_function->SQLDatos_SA($select);
@@ -242,9 +242,9 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <small class="form-text text-dark"><span class="asteriscos">* Puesto</span></small>
+                                    <small class="form-text text-dark">Puesto</small>
 
-                                    <select name="id_puesto" id="id_puesto" aria-required="">
+                                    <select name="id_puesto" id="id_puesto" aria-required="" disabled>
                                         <?php
                                             $select = "SELECT * FROM ".TBL_PUESTO." WHERE activo = 1";
                                             $listado_items= $Quick_function->SQLDatos_SA($select);
@@ -265,9 +265,10 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <small class="form-text text-dark"><span class="asteriscos">* Sexo</span></small>
+                                    <small class="form-text text-dark">Sexo
+                                </small>
 
-                                    <select name="id_sexo" id="id_sexo" aria-required="">
+                                    <select name="id_sexo" id="id_sexo" aria-required="" disabled>
                                         <?php
                                             $select = "SELECT * FROM ".TBL_SEXO." WHERE activo = 1";
                                             $listado_items= $Quick_function->SQLDatos_SA($select);
@@ -288,9 +289,9 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <small class="form-text text-dark"><span class="asteriscos">* Sucursal</span></small>
+                                    <small class="form-text text-dark">Sucursal</small>
 
-                                    <select name="id_sucursal" id="id_sucursal" aria-required="">
+                                    <select name="id_sucursal" id="id_sucursal" aria-required="" disabled>
                                         <?php
                                             $select = "SELECT * FROM ".TBL_SUCURSALES." WHERE activo = 1";
                                             $listado_items= $Quick_function->SQLDatos_SA($select);
@@ -311,9 +312,9 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <small class="form-text text-dark"><span class="asteriscos">* Esquema de vacunas</span></small>
+                                    <small class="form-text text-dark">Esquema de vacunas</small>
 
-                                    <select name="vacunas" id="vacunas" aria-required="">
+                                    <select name="vacunas" id="vacunas" aria-required="" disabled>
                                         <option value='1'>Completo</option>
                                         <option value='2'>Incompleto</option>
                                         <option value='3'>Sin vacunas</option>
