@@ -59,9 +59,9 @@
                 </div>
                 <div class="row">
                     <div class="col-12 mt-md-0 text-md-right">
-                        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#AgregarDato" onclick="establecer_agregar()">
+                        <a type="button" class="btn btn-dark" href="colaboradores-add.php">
                             Agregar Cliente
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>

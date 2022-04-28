@@ -65,5 +65,14 @@
         <script type="text/javascript">
             $(document).ready(function () {
                 crear_selectpicker()
+
+                $(".datepicker").datepicker({
+                    weekStart: 7,
+                    clearBtn: false,
+                    language: "es",
+                    format: "yyyy/mm/dd",
+                    autoclose: true,
+                    startView: 2,
+                });
             })
         </script>
