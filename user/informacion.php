@@ -34,45 +34,44 @@
                 <div class="row">
                     <div class="col-12 overflowX">
                         <div class="header pb-4 pt-lg-8 d-flex align-items-center" >
-                            
-                            <div class="row">
+                        <div class="row">
                                 <div class="col-lg-12 px-2">
                                     <h2>Informaci&oacute;n General<h2>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-12 mt-md-0 text-md-right"></div>
-                            </div>
                         </div>
                             <!-- Page content -->
-                        <div class="container-fluid mt--7">
-                            <div class="row">
-                                <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
-                                    <div class="card card-profile shadow">
+                        <div class="">
+                           
+                        
+        <!-- Nueva pantalla -->
+        <div class="" id="Informacion" tabindex="-1" role="dialog" aria-hidden="true">
+            <form id="formcolaboradores" action="procedures/colaboradores.php" method="post">
+                <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="texto_Modal_metodo">Nuevo item</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="" >
                                         <div class="row justify-content-center">
                                             <div class="col-lg-3 order-lg-2">
                                                 <div class="card-profile-image">
                                                     <a href="#">
-                                                        <img src="../img/systemusers.png" class="rounded-circle">
+                                                        <!-- Fotografia -->
+                                                        <img src="" class="rounded-circle">
                                                     </a>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
-                                            <div class="d-flex justify-content-between"></div>
-                                        </div>
-
                                         <div class="card-body pt-0 pt-md-4">
-                                            <div class="row">
-                                                <div class="col">
-                                                    <div class="card-profile-stats d-flex justify-content-center mt-md-5">
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            
                                             <div class="text-center">
                                                 <h3>
-                                                    Nombre Apellido<span class="font-weight-light">, 27</span>
+                                                Nombre Apellido<span class="font-weight-light"></span>
                                                 </h3>
                                                 <div class="h5 font-weight-300">
                                                     <i class="ni location_pin mr-2"></i>Puesto Colaborador
@@ -80,260 +79,535 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-xl-8 order-xl-1">
-                                    <div class="card bg-secondary shadow">
-                                        <div class="card-header bg-white border-0">
-                                            <div class="row align-items-center">
-                                                <div class="col-12">
-                                                    <h3 class="mb-0">Informaci&oacute;n</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-body">
-                                            <form>
-                                                <h6 class="heading-small text-muted mb-4 text-dark">Informaci&oacute;n de ingreso:</h6>
-                                                <div class="pl-lg-4">
-                                                    <div class="row">
-                                                        <div class="col-lg-6">
-                                                            <div class="form-group focused">
-                                                                <label class="form-control-label text-dark" for="input-username">Usuario</label>
-                                                                <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Usuario" value="nombreapellido@carnescastillo.com" disabled>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-6">
-                                                            <div class="form-group">
-                                                                <label class="form-control-label text-dark" for="input-email">Correo electr&oacute;nico</label>
-                                                                <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="nombreapellido@carnescastillo.com" disabled>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-    
+                        <div class="modal-body row">
 
-                                                </div>
-                                                <hr class="my-4">
-
-                                                <h6 class="heading-small text-muted mb-4 text-dark">Informaci&oacute;n General</h6>
-                                                <div class="pl-lg-4">
-
-                                                <div class="row">
-                                                        <div class="col-lg-6">
-                                                            <div class="form-group focused">
-                                                                <label class="form-control-label text-dark" for="input-first-name">Nombre:</label>
-                                                                <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="Nombre" value="Nombre" disabled>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-6">
-                                                            <div class="form-group focused">
-                                                                <label class="form-control-label text-dark" for="input-last-name">Apellido</label>
-                                                                <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Apellido" value="Apellido" disabled>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row">
-                                                        <div class="col-lg-6">
-                                                            <div class="form-group focused">
-                                                                <label class="form-control-label text-dark" for="input-sexo">Genero:</label>
-                                                                <input type="text" id="input-sexo" class="form-control form-control-alternative" placeholder="" value="Masculino" disabled>
-                                                            </div>
-                                                        </div>
-                                                      
-                                                    </div>
-
-
-                                                    <div class="row">
-                                                        <div class="col-lg-6">
-                                                            <div class="form-group focused">
-                                                                <label class="form-control-label text-dark" for="input-first-name">Fecha Nacimiento:</label>
-                                                                <input type="text" id="input-fecha_nacimiento" class="form-control form-control-alternative" placeholder="22-2-1990" value="22-2-1990" disabled>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-6">
-                                                            <div class="form-group focused">
-                                                                <label class="form-control-label text-dark" for="input-last-name">Identificación:</label>
-                                                                <input type="text" id="input-cedula" class="form-control form-control-alternative" placeholder="11111111" value="11111111" disabled>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row">
-                                                        <div class="col-lg-6">
-                                                            <div class="form-group focused">
-                                                                <label class="form-control-label text-dark" for="input-first-name">Licencia Conduccion:</label>
-                                                                <input type="text" id="input-licencia_conduccion" class="form-control form-control-alternative" placeholder="Si/No" value="Si" disabled>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-6">
-                                                            <div class="form-group focused">
-                                                                <label class="form-control-label text-dark" for="input-last-name">Tipo Licencia:</label>
-                                                                <input type="text" id="input-tipo_licencia" class="form-control form-control-alternative" placeholder="" value="B1" disabled>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row">
-                                                        <div class="col-lg-6">
-                                                            <div class="form-group focused">
-                                                                <label class="form-control-label text-dark" for="input-last-name">Teléfono:</label>
-                                                                <input type="text" id="input-telefono" class="form-control form-control-alternative" placeholder="" value="8888-8888" disabled>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-6">
-                                                            <div class="form-group focused">
-                                                                <label class="form-control-label text-dark" for="input-first-name">Correo electrónico:</label>
-                                                                <input type="text" id="input-correo" class="form-control form-control-alternative" placeholder="" value="nombre@gmail.com" disabled>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-
-                                                    <div class="row">
-                                                        <div class="col-lg-6">
-                                                            <div class="form-group focused">
-                                                                <label class="form-control-label text-dark" for="input-last-name">Estado Civil:</label>
-                                                                <input type="text" id="input-estado_civil" class="form-control form-control-alternative" placeholder="" value="Soltero" disabled>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-6">
-                                                            <div class="form-group focused">
-                                                                <label class="form-control-label text-dark" for="input-first-name">Cantidad de hijos:</label>
-                                                                <input type="text" id="input-hijos" class="form-control form-control-alternative" placeholder="" value="0" disabled>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="row">
-
-                                                        <div class="col-md-12">
-                                                            <div class="form-group focused">
-                                                                <label class="form-control-label text-dark" for="input-address">Residencia</label>
-                                                                <input disabled id="input-residencia" class="form-control form-control-alternative" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09" type="text">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-
-
-                                                    <div class="row">
-                                                        <div class="col-lg-4">
-                                                            <div class="form-group focused">
-                                                                <label class="form-control-label text-dark" for="input-city">City</label>
-                                                                <input disabled type="text" id="input-city" class="form-control form-control-alternative" placeholder="City" value="New York">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <div class="form-group focused">
-                                                                <label class="form-control-label text-dark" for="input-country">Country</label>
-                                                                <input disabled type="text" id="input-country" class="form-control form-control-alternative" placeholder="Country" value="United States">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <div class="form-group">
-                                                                <label class="form-control-label text-dark" for="input-country">Postal code</label>
-                                                                <input disabled type="number" id="input-postal-code" class="form-control form-control-alternative" placeholder="Postal code">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <hr class="my-4">
-                                                <!-- Description -->
-                                                <h6 class="heading-small text-muted mb-4 text-dark">Información Laboral</h6>
-                                                <div class="pl-lg-4">
-
-                                                    <div class="row">
-                                                        <div class="col-lg-6">
-                                                            <div class="form-group focused">
-                                                                <label class="form-control-label text-dark" for="input-last-name">Fecha Contratación:</label>
-                                                                <input type="text" id="input-fecha_contratacion" class="form-control form-control-alternative" placeholder="" value="01-01-2022" disabled>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-6">
-                                                            <div class="form-group focused">
-                                                                <label class="form-control-label text-dark" for="input-first-name">Salario:</label>
-                                                                <input type="text" id="input-salario_actual" class="form-control form-control-alternative" placeholder="" value="$1000" disabled>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row">
-                                                        <div class="col-lg-6">
-                                                            <div class="form-group focused">
-                                                                <label class="form-control-label text-dark" for="input-last-name">Puesto:</label>
-                                                                <input type="text" id="input-id_puesto" class="form-control form-control-alternative" placeholder="" value="Carnicero" disabled>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-6">
-                                                            <div class="form-group focused">
-                                                                <label class="form-control-label text-dark" for="input-id_sucursal">Sucursal:</label>
-                                                                <input type="text" id="input-id_sucursal" class="form-control form-control-alternative" placeholder="" value="San José" disabled>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row">
-                                                        <div class="col-lg-6">
-                                                            <div class="form-group focused">
-                                                                <label class="form-control-label text-dark" for="input-id_talla_uniforme">Talla de Uniforme:</label>
-                                                                <input type="text" id="input-id_talla_uniforme" class="form-control form-control-alternative" placeholder="" value="M" disabled>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row">
-                                                        <div class="col-lg-6">
-                                                            <div class="form-group focused">
-                                                                <label class="form-control-label text-dark" for="input-last-name">Banco:</label>
-                                                                <input type="text" id="input-banco" class="form-control form-control-alternative" placeholder="" value="BAC" disabled>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-6">
-                                                            <div class="form-group focused">
-                                                                <label class="form-control-label text-dark" for="input-cuenta_iban">Cuenta IBAN:</label>
-                                                                <input type="text" id="input-cuenta_iban" class="form-control form-control-alternative" placeholder="" value="CR0017765437998" disabled>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row">
-                                                        <div class="col-lg-6">
-                                                            <div class="form-group focused">
-                                                                <label class="form-control-label text-dark" for="input-cuenta_cliente">Cuenta Cliente:</label>
-                                                                <input type="text" id="input-cuenta_cliente" class="form-control form-control-alternative" placeholder="" value="0972569982175" disabled>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-6">
-                                                            <div class="form-group focused">
-                                                                <label class="form-control-label text-dark" for="input-numero_sinpe">Numero SINPE:</label>
-                                                                <input type="text" id="input-numero_sinpe" class="form-control form-control-alternative" placeholder="" value="8888-8888" disabled>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row">
-                                                        <div class="col-lg-6">
-                                                            <div class="form-group focused">
-                                                                <label class="form-control-label text-dark" for="input-id_grado_academico">Grado Academico:</label>
-                                                                <input type="text" id="input-id_grado_academico" class="form-control form-control-alternative" placeholder="" value="Técnico" disabled>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <!--div class="form-group focused text-dark">
-                                                        <label>About Me</label>
-                                                        <textarea disabled rows="4" class="form-control form-control-alternative" placeholder="A few words about you ...">A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</textarea>
-                                                    </div-->
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Cédula</span></small>
+                                    <input type="text" class="form-control" placeholder="Cédula" name="cedula" id="cedula">
                                 </div>
                             </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Nombre</span></small>
+                                    <input type="text" class="form-control" placeholder="Nombre" name="nombre" id="nombre">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Apellido</span></small>
+                                    <input type="text" class="form-control" placeholder="Apellido" name="apellido" id="apellido">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Fecha nacimiento</span></small>
+                                    <input type="text" class="form-control" placeholder="Fecha nacimiento" name="fecha_nacimiento" id="fecha_nacimiento">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Tipo de licencia</span></small>
+
+                                    <select name="tipo_licencia" id="tipo_licencia" aria-required="">
+                                        <option value='No tiene'>No tiene</option>
+                                        <option value='A1'>A1</option>
+                                        <option value='A2'>A2</option>
+                                        <option value='A3'>A3</option>
+                                        <option value='B1'>B1</option>
+                                        <option value='B2'>B2</option>
+                                        <option value='B3'>B3</option>
+                                        <option value='B4'>B4</option>
+                                        <option value='C1'>C1</option>
+                                        <option value='C2'>C2</option>
+                                        <option value='D1'>D1</option>
+                                        <option value='D2'>D2</option>
+                                        <option value='D3'>D3</option>
+                                        <option value='E1'>E1</option>
+                                        <option value='E2'>E2</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Télefono</span></small>
+                                    <input type="text" class="form-control" placeholder="Télefono" name="telefono" id="telefono">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Correo</span></small>
+                                    <input type="text" class="form-control" placeholder="Correo" name="correo" id="correo">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Residencia</span></small>
+                                    <input type="text" class="form-control" placeholder="Residencia" name="residencia" id="residencia">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Hijos</span></small>
+                                    <input type="text" class="form-control" placeholder="Hijos" name="hijos" id="hijos">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Salario actual</span></small>
+                                    <input type="text" class="form-control" placeholder="Salario actual" name="salario_actual" id="salario_actual">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Estado civil</span></small>
+                                    <input type="text" class="form-control" placeholder="Estado civil" name="estado_civil" id="estado_civil">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Banco</span></small>
+                                    <input type="text" class="form-control" placeholder="Banco" name="banco" id="banco">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Cuenta IBAN</span></small>
+                                    <input type="text" class="form-control" placeholder="Cuenta IBAN" name="cuenta_iban" id="cuenta_iban">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Cuenta cliente</span></small>
+                                    <input type="text" class="form-control" placeholder="Cuenta cliente" name="cuenta_cliente" id="cuenta_cliente">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Número SINPE</span></small>
+                                    <input type="text" class="form-control" placeholder="Número SINPE" name="numero_sinpe" id="numero_sinpe">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Fecha contratación</span></small>
+                                    <input type="text" class="form-control" placeholder="Fecha contratación" name="fecha_contratacion" id="fecha_contratacion">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Fecha ingreso</span></small>
+                                    <input type="text" class="form-control" placeholder="Fecha ingreso" name="fecha_ingreso" id="fecha_ingreso">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Grado académico</span></small>
+
+                                    <select name="id_grado_academico" id="id_grado_academico" aria-required="">
+                                        <?php
+                                            $select = "SELECT * FROM ".TBL_GRADO_ACADEMICO. " WHERE activo = 1" ;
+                                            $listado_items= $Quick_function->SQLDatos_SA($select);
+                                            while ($row = $listado_items->fetch()) {
+                                                $id = $row["id"];
+                                                $nombre = $row["nombre"];
+
+                                                $informacion = htmlentities(json_encode($row));
+
+                                                echo "
+                                                    <option value='$id'>$nombre</option>
+                                                ";
+                                            }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Puesto</span></small>
+
+                                    <select name="id_puesto" id="id_puesto" aria-required="">
+                                        <?php
+                                            $select = "SELECT * FROM ".TBL_PUESTO." WHERE activo = 1";
+                                            $listado_items= $Quick_function->SQLDatos_SA($select);
+                                            while ($row = $listado_items->fetch()) {
+                                                $id = $row["id"];
+                                                $nombre = $row["nombre"];
+
+                                                $informacion = htmlentities(json_encode($row));
+
+                                                echo "
+                                                    <option value='$id'>$nombre</option>
+                                                ";
+                                            }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Sexo</span></small>
+
+                                    <select name="id_sexo" id="id_sexo" aria-required="">
+                                        <?php
+                                            $select = "SELECT * FROM ".TBL_SEXO." WHERE activo = 1";
+                                            $listado_items= $Quick_function->SQLDatos_SA($select);
+                                            while ($row = $listado_items->fetch()) {
+                                                $id = $row["id"];
+                                                $descripcion = $row["descripcion"];
+
+                                                $informacion = htmlentities(json_encode($row));
+
+                                                echo "
+                                                    <option value='$id'>$descripcion</option>
+                                                ";
+                                            }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Sucursal</span></small>
+
+                                    <select name="id_sucursal" id="id_sucursal" aria-required="">
+                                        <?php
+                                            $select = "SELECT * FROM ".TBL_SUCURSALES." WHERE activo = 1";
+                                            $listado_items= $Quick_function->SQLDatos_SA($select);
+                                            while ($row = $listado_items->fetch()) {
+                                                $id = $row["id"];
+                                                $nombre = $row["nombre"];
+
+                                                $informacion = htmlentities(json_encode($row));
+
+                                                echo "
+                                                    <option value='$id'>$nombre</option>
+                                                ";
+                                            }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Esquema de vacunas</span></small>
+
+                                    <select name="vacunas" id="vacunas" aria-required="">
+                                        <option value='1'>Completo</option>
+                                        <option value='2'>Incompleto</option>
+                                        <option value='3'>Sin vacunas</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6" > 
+                        <!--div class="modal-footer"-->
+                        <br>
+                            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#AgregarDato" onclick="">
+                                            Editar</button>
+                        <br>
                         </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </form>
+        </div>
+        </div>
+          <!-- Fin Colaborador -->  
+
                     </div>
                 </div>
             </div>
         </section>
+        <!-- Modal -->
+       
+                        <!--Editar-->
+
+        <div class="modal fade" id="AgregarDato" tabindex="-1" role="dialog" aria-hidden="true">
+            <form id="formcolaboradores" action="procedures/colaboradores.php" method="post">
+                <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="texto_Modal_metodo">Nuevo item</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body row">
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Cédula</span></small>
+                                    <input type="text" class="form-control" placeholder="Cédula" name="cedula" id="cedula">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Nombre</span></small>
+                                    <input type="text" class="form-control" placeholder="Nombre" name="nombre" id="nombre">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Apellido</span></small>
+                                    <input type="text" class="form-control" placeholder="Apellido" name="apellido" id="apellido">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Fecha nacimiento</span></small>
+                                    <input type="text" class="form-control" placeholder="Fecha nacimiento" name="fecha_nacimiento" id="fecha_nacimiento">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Tipo de licencia</span></small>
+
+                                    <select name="tipo_licencia" id="tipo_licencia" aria-required="">
+                                        <option value='No tiene'>No tiene</option>
+                                        <option value='A1'>A1</option>
+                                        <option value='A2'>A2</option>
+                                        <option value='A3'>A3</option>
+                                        <option value='B1'>B1</option>
+                                        <option value='B2'>B2</option>
+                                        <option value='B3'>B3</option>
+                                        <option value='B4'>B4</option>
+                                        <option value='C1'>C1</option>
+                                        <option value='C2'>C2</option>
+                                        <option value='D1'>D1</option>
+                                        <option value='D2'>D2</option>
+                                        <option value='D3'>D3</option>
+                                        <option value='E1'>E1</option>
+                                        <option value='E2'>E2</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Télefono</span></small>
+                                    <input type="text" class="form-control" placeholder="Télefono" name="telefono" id="telefono">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Correo</span></small>
+                                    <input type="text" class="form-control" placeholder="Correo" name="correo" id="correo">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Residencia</span></small>
+                                    <input type="text" class="form-control" placeholder="Residencia" name="residencia" id="residencia">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Hijos</span></small>
+                                    <input type="text" class="form-control" placeholder="Hijos" name="hijos" id="hijos">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Salario actual</span></small>
+                                    <input type="text" class="form-control" placeholder="Salario actual" name="salario_actual" id="salario_actual">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Estado civil</span></small>
+                                    <input type="text" class="form-control" placeholder="Estado civil" name="estado_civil" id="estado_civil">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Banco</span></small>
+                                    <input type="text" class="form-control" placeholder="Banco" name="banco" id="banco">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Cuenta IBAN</span></small>
+                                    <input type="text" class="form-control" placeholder="Cuenta IBAN" name="cuenta_iban" id="cuenta_iban">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Cuenta cliente</span></small>
+                                    <input type="text" class="form-control" placeholder="Cuenta cliente" name="cuenta_cliente" id="cuenta_cliente">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Número SINPE</span></small>
+                                    <input type="text" class="form-control" placeholder="Número SINPE" name="numero_sinpe" id="numero_sinpe">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Fecha contratación</span></small>
+                                    <input type="text" class="form-control" placeholder="Fecha contratación" name="fecha_contratacion" id="fecha_contratacion">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Fecha ingreso</span></small>
+                                    <input type="text" class="form-control" placeholder="Fecha ingreso" name="fecha_ingreso" id="fecha_ingreso">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Grado académico</span></small>
+
+                                    <select name="id_grado_academico" id="id_grado_academico" aria-required="">
+                                        <?php
+                                            $select = "SELECT * FROM ".TBL_GRADO_ACADEMICO. " WHERE activo = 1" ;
+                                            $listado_items= $Quick_function->SQLDatos_SA($select);
+                                            while ($row = $listado_items->fetch()) {
+                                                $id = $row["id"];
+                                                $nombre = $row["nombre"];
+
+                                                $informacion = htmlentities(json_encode($row));
+
+                                                echo "
+                                                    <option value='$id'>$nombre</option>
+                                                ";
+                                            }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Puesto</span></small>
+
+                                    <select name="id_puesto" id="id_puesto" aria-required="">
+                                        <?php
+                                            $select = "SELECT * FROM ".TBL_PUESTO." WHERE activo = 1";
+                                            $listado_items= $Quick_function->SQLDatos_SA($select);
+                                            while ($row = $listado_items->fetch()) {
+                                                $id = $row["id"];
+                                                $nombre = $row["nombre"];
+
+                                                $informacion = htmlentities(json_encode($row));
+
+                                                echo "
+                                                    <option value='$id'>$nombre</option>
+                                                ";
+                                            }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Sexo</span></small>
+
+                                    <select name="id_sexo" id="id_sexo" aria-required="">
+                                        <?php
+                                            $select = "SELECT * FROM ".TBL_SEXO." WHERE activo = 1";
+                                            $listado_items= $Quick_function->SQLDatos_SA($select);
+                                            while ($row = $listado_items->fetch()) {
+                                                $id = $row["id"];
+                                                $descripcion = $row["descripcion"];
+
+                                                $informacion = htmlentities(json_encode($row));
+
+                                                echo "
+                                                    <option value='$id'>$descripcion</option>
+                                                ";
+                                            }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Sucursal</span></small>
+
+                                    <select name="id_sucursal" id="id_sucursal" aria-required="">
+                                        <?php
+                                            $select = "SELECT * FROM ".TBL_SUCURSALES." WHERE activo = 1";
+                                            $listado_items= $Quick_function->SQLDatos_SA($select);
+                                            while ($row = $listado_items->fetch()) {
+                                                $id = $row["id"];
+                                                $nombre = $row["nombre"];
+
+                                                $informacion = htmlentities(json_encode($row));
+
+                                                echo "
+                                                    <option value='$id'>$nombre</option>
+                                                ";
+                                            }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <small class="form-text text-dark"><span class="asteriscos">* Esquema de vacunas</span></small>
+
+                                    <select name="vacunas" id="vacunas" aria-required="">
+                                        <option value='1'>Completo</option>
+                                        <option value='2'>Incompleto</option>
+                                        <option value='3'>Sin vacunas</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn btn-dark">Guardar</button>
+                        </div>
+                    </div>
+                    <input type="hidden" id="formaction_colaboradores" name="formaction" value="create_DB">
+                    <input type="hidden" id="id_colaboradores_edit" name="id_colaboradores" value="">
+                    <input type="hidden" name="origen" value="2">
+                </div>
+            </form>
+        </div>
 
         <?php include_once("template/libs.php") ?>
         <?php include_once("template/footer.php") ?>

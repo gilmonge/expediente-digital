@@ -32,6 +32,7 @@
                         <h2>Listado de cursos<h2>
                     </div>
                 </div>
+                
             </div>
         </section>
 
@@ -45,6 +46,9 @@
                                     <th scope="col" class="text-center">Id</th>
                                     <th scope="col" class="text-center">Nombre</th>
                                     <th scope="col" class="text-center">Tiempo de capacitación</th>
+                                    <th scope="col" class="text-center"></th>
+                                    <th scope="col" class="text-center"></th>
+                                    <th scope="col" class="text-center"></th>
                                 </tr>
                             </thead>
                             <tbody class="expediente-cuerpo-tabla">
@@ -55,23 +59,16 @@
                                         $id = $row["id"];
                                         $nombre = $row["nombre"];
                                         $tiempo_capacitacion = $row["tiempo_capacitacion"];
+                                        $activo = ($row["activo"])? "Activo" : "Bloqueado";
 
                                         $informacion = htmlentities(json_encode($row));
 
                                         $botonEditar = '
-                                            <button type="button" class="btn btn-dark btn-icon-only btn-sm" data-toggle="modal" data-target="#AgregarDato" onclick="establecer_editar(\''.$informacion.'\')">
-                                                <span class="btn-inner--icon">
-                                                    <i class="fas fa-pencil-alt"></i>
-                                                </span>
-                                            </button>
+                                            
                                         ';
 
                                         $botonEliminar = '
-                                            <button type="button" class="btn btn-danger btn-icon-only btn-sm" data-toggle="tooltip" data-placement="bottom" title="Eliminar" onclick="eliminar(\''.$informacion.'\')">
-                                                <span class="btn-inner--icon">
-                                                    <i class="far fa-trash-alt"></i>
-                                                </span>
-                                            </button>
+                                           
                                         ';
 
                                         echo "
@@ -79,6 +76,7 @@
                                                 <td class='text-center'>$id</td>
                                                 <td class='text-center'>$nombre</td>
                                                 <td class='text-center'>$tiempo_capacitacion</td>
+                                                <td class='text-center'>$activo</td>
                                                 <td class='text-center'>$botonEditar</td>
                                                 <td class='text-center'>$botonEliminar</td>
                                             </tr>
@@ -114,7 +112,7 @@
                         </div>
                     </div>
                     <input type="hidden" id="formaction_departamento_accion" name="formaction" value="">
-                    <input type="hidden" id="id_departamento_accion" name="id_departamento" value="">
+                    <input type="hidden" id="id_cursos_accion" name="id_cursos" value="">
                 </div>
             </form>
         </div>
@@ -152,7 +150,7 @@
                         </div>
                     </div>
                     <input type="hidden" id="formaction_departamento" name="formaction" value="create_DB">
-                    <input type="hidden" id="id_edit" name="id_departamento" value="">
+                    <input type="hidden" id="id_edit" name="id_cursos" value="">
                 </div>
             </form>
         </div>
@@ -183,15 +181,15 @@
 
             function eliminar(informacion) {
                 informacion = JSON.parse(informacion)
-                $("#formaction_departamento_accion").val('deleted_DB')
-                $("#id_departamento_accion").val(informacion.id)
+                $("#formaction_departamento_accion").val('block_DB')
+                $("#id_cursos_accion").val(informacion.id)
 
                 mensaje = `
-                    Desea borrar '<b>${informacion.nombre}</b>'
+                    Desea bloquear '<b>${informacion.nombre}</b>'
                 `;
 
                 texto = `
-                    Borrar
+                    Bloquear
                 `;
                 
                 $("#texto_accion").html(texto)
