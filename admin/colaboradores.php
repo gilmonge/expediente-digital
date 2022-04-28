@@ -454,39 +454,248 @@
                             </button>
                         </div>
                         <div class="modal-body">
+                            
                             <div class="form-group">
-                                <table class="table">
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row" class="expediente-letra-estandar">Tipo identificación:</th>
-                                            <td><span id="info_tipo_identificacion" class="badge badge-light expediente-letra-estandar"></span></td>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <small class="form-text text-dark"><span class="asteriscos">* Cédula</span></small>
+                                        <input type="text" class="form-control" placeholder="Cédula" name="cedula" id="cedula" readonly>
+                                    </div>
+                                </div>
 
-                                            <th scope="row" class="expediente-letra-estandar">Teléfono:</th>
-                                            <td><span id="info_telefono" class="badge badge-light expediente-letra-estandar"></span></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row" class="expediente-letra-estandar">Identificación:</th>
-                                            <td><span id="info_identificacion" class="badge badge-light expediente-letra-estandar"></span></td>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <small class="form-text text-dark"><span class="asteriscos">* Nombre</span></small>
+                                        <input type="text" class="form-control" placeholder="Nombre" name="nombre" id="nombre" readonly>
+                                    </div>
+                                </div>
 
-                                            <th scope="row" class="expediente-letra-estandar">Dirección:</th>
-                                            <td><span id="info_direccion" class="badge badge-light expediente-letra-estandar"></span></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row" class="expediente-letra-estandar">Nombre:</th>
-                                            <td><span id="info_nombre" class="badge badge-light expediente-letra-estandar"></span></td>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <small class="form-text text-dark"><span class="asteriscos">* Apellido</span></small>
+                                        <input type="text" class="form-control" placeholder="Apellido" name="apellido" id="apellido" readonly>
+                                    </div>
+                                </div>
 
-                                            <th scope="row" class="expediente-letra-estandar">Clasificación:</th>
-                                            <td><span id="info_clasificacion" class="badge badge-light expediente-letra-estandar"></span></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row" class="expediente-letra-estandar">Correo:</th>
-                                            <td><span id="info_correo" class="badge badge-light expediente-letra-estandar"></span></td>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <small class="form-text text-dark"><span class="asteriscos">* Fecha nacimiento</span></small>
+                                        <input type="text" class="form-control" placeholder="Fecha nacimiento" name="fecha_nacimiento" id="fecha_nacimiento" readonly>
+                                    </div>
+                                </div>
 
-                                            <th scope="row" class="expediente-letra-estandar">Estado:</th>
-                                            <td><span id="info_estado" class="badge badge-light expediente-letra-estandar"></span></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <small class="form-text text-dark"><span class="asteriscos">* Tipo de licencia</span></small>
+
+                                        <select name="tipo_licencia" id="tipo_licencia" aria-required="" readonly>
+                                            <option value='No tiene'>No tiene</option>
+                                            <option value='A1'>A1</option>
+                                            <option value='A2'>A2</option>
+                                            <option value='A3'>A3</option>
+                                            <option value='B1'>B1</option>
+                                            <option value='B2'>B2</option>
+                                            <option value='B3'>B3</option>
+                                            <option value='B4'>B4</option>
+                                            <option value='C1'>C1</option>
+                                            <option value='C2'>C2</option>
+                                            <option value='D1'>D1</option>
+                                            <option value='D2'>D2</option>
+                                            <option value='D3'>D3</option>
+                                            <option value='E1'>E1</option>
+                                            <option value='E2'>E2</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <small class="form-text text-dark"><span class="asteriscos">* Télefono</span></small>
+                                        <input type="text" class="form-control" placeholder="Télefono" name="telefono" id="telefono" readonly>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <small class="form-text text-dark"><span class="asteriscos">* Correo</span></small>
+                                        <input type="text" class="form-control" placeholder="Correo" name="correo" id="correo" readonly>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <small class="form-text text-dark"><span class="asteriscos">* Residencia</span></small>
+                                        <input type="text" class="form-control" placeholder="Residencia" name="residencia" id="residencia" readonly>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <small class="form-text text-dark"><span class="asteriscos">* Hijos</span></small>
+                                        <input type="text" class="form-control" placeholder="Hijos" name="hijos" id="hijos" readonly>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <small class="form-text text-dark"><span class="asteriscos">* Salario actual</span></small>
+                                        <input type="text" class="form-control" placeholder="Salario actual" name="salario_actual" id="salario_actual">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <small class="form-text text-dark"><span class="asteriscos">* Estado civil</span></small>
+                                        <input type="text" class="form-control" placeholder="Estado civil" name="estado_civil" id="estado_civil">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <small class="form-text text-dark"><span class="asteriscos">* Banco</span></small>
+                                        <input type="text" class="form-control" placeholder="Banco" name="banco" id="banco">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <small class="form-text text-dark"><span class="asteriscos">* Cuenta IBAN</span></small>
+                                        <input type="text" class="form-control" placeholder="Cuenta IBAN" name="cuenta_iban" id="cuenta_iban">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <small class="form-text text-dark"><span class="asteriscos">* Cuenta cliente</span></small>
+                                        <input type="text" class="form-control" placeholder="Cuenta cliente" name="cuenta_cliente" id="cuenta_cliente">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <small class="form-text text-dark"><span class="asteriscos">* Número SINPE</span></small>
+                                        <input type="text" class="form-control" placeholder="Número SINPE" name="numero_sinpe" id="numero_sinpe">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <small class="form-text text-dark"><span class="asteriscos">* Fecha contratación</span></small>
+                                        <input type="text" class="form-control" placeholder="Fecha contratación" name="fecha_contratacion" id="fecha_contratacion">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <small class="form-text text-dark"><span class="asteriscos">* Fecha ingreso</span></small>
+                                        <input type="text" class="form-control" placeholder="Fecha ingreso" name="fecha_ingreso" id="fecha_ingreso">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <small class="form-text text-dark"><span class="asteriscos">* Grado académico</span></small>
+
+                                        <select name="id_grado_academico" id="id_grado_academico" aria-required="">
+                                            <?php
+                                                $select = "SELECT * FROM ".TBL_GRADO_ACADEMICO. " WHERE activo = 1" ;
+                                                $listado_items= $Quick_function->SQLDatos_SA($select);
+                                                while ($row = $listado_items->fetch()) {
+                                                    $id = $row["id"];
+                                                    $nombre = $row["nombre"];
+
+                                                    $informacion = htmlentities(json_encode($row));
+
+                                                    echo "
+                                                        <option value='$id'>$nombre</option>
+                                                    ";
+                                                }
+                                            ?>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <small class="form-text text-dark"><span class="asteriscos">* Puesto</span></small>
+
+                                        <select name="id_puesto" id="id_puesto" aria-required="">
+                                            <?php
+                                                $select = "SELECT * FROM ".TBL_PUESTO." WHERE activo = 1";
+                                                $listado_items= $Quick_function->SQLDatos_SA($select);
+                                                while ($row = $listado_items->fetch()) {
+                                                    $id = $row["id"];
+                                                    $nombre = $row["nombre"];
+
+                                                    $informacion = htmlentities(json_encode($row));
+
+                                                    echo "
+                                                        <option value='$id'>$nombre</option>
+                                                    ";
+                                                }
+                                            ?>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <small class="form-text text-dark"><span class="asteriscos">* Sexo</span></small>
+
+                                        <select name="id_sexo" id="id_sexo" aria-required="">
+                                            <?php
+                                                $select = "SELECT * FROM ".TBL_SEXO." WHERE activo = 1";
+                                                $listado_items= $Quick_function->SQLDatos_SA($select);
+                                                while ($row = $listado_items->fetch()) {
+                                                    $id = $row["id"];
+                                                    $descripcion = $row["descripcion"];
+
+                                                    $informacion = htmlentities(json_encode($row));
+
+                                                    echo "
+                                                        <option value='$id'>$descripcion</option>
+                                                    ";
+                                                }
+                                            ?>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <small class="form-text text-dark"><span class="asteriscos">* Sucursal</span></small>
+
+                                        <select name="id_sucursal" id="id_sucursal" aria-required="">
+                                            <?php
+                                                $select = "SELECT * FROM ".TBL_SUCURSALES." WHERE activo = 1";
+                                                $listado_items= $Quick_function->SQLDatos_SA($select);
+                                                while ($row = $listado_items->fetch()) {
+                                                    $id = $row["id"];
+                                                    $nombre = $row["nombre"];
+
+                                                    $informacion = htmlentities(json_encode($row));
+
+                                                    echo "
+                                                        <option value='$id'>$nombre</option>
+                                                    ";
+                                                }
+                                            ?>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <small class="form-text text-dark"><span class="asteriscos">* Esquema de vacunas</span></small>
+
+                                        <select name="vacunas" id="vacunas" aria-required="">
+                                            <option value='1'>Completo</option>
+                                            <option value='2'>Incompleto</option>
+                                            <option value='3'>Sin vacunas</option>
+                                        </select>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
