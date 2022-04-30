@@ -38,7 +38,7 @@
                                         </a>
                                     </div>
                                     <div class="list-group list-group-flush px-lg-4">
-                                        <a type="submit" class="list-group-item list-group-item-action" role="button" href="#">
+                                        <a type="submit" class="list-group-item list-group-item-action" role="button" href="reportes.php">
                                             <div class="d-flex">
                                                 <span class="h6">
                                                     <i class="fas fa-pencil-alt"></i>
